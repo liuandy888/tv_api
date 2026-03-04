@@ -1,5 +1,5 @@
 🕘️更新时间,#genre#
-2026-03-04 11:42:17,http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001022/index.m3u8
+2026-03-04 11:53:40,http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001022/index.m3u8
 
 📺央视频道,#genre#
 CCTV-1,http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001022/index.m3u8
