@@ -1,13 +1,9 @@
 #EXTM3U x-tvg-url="https://raw.githubusercontent.com/liuandy888/tv_api/refs/heads/master/output/epg/epg.gz"
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV-1" tvg-logo="http://10.1.0.151:5180/logo/CCTV-1.png" group-title="🕘️更新时间",2026-03-04 11:53:40
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV-1" tvg-logo="http://10.1.0.219:5180/logo/CCTV-1.png" group-title="🕘️更新时间",2026-03-05 10:42:08
 https://srs.ssws.tv/video/sstv-10/index.m3u8
-#EXTINF:-1 tvg-id="2" tvg-name="三沙卫视" tvg-logo="http://10.1.0.151:5180/logo/三沙卫视.png" group-title="📡卫视频道",三沙卫视
+#EXTINF:-1 tvg-id="2" tvg-name="三沙卫视" tvg-logo="http://10.1.0.219:5180/logo/三沙卫视.png" group-title="📡卫视频道",三沙卫视
 https://srs.ssws.tv/video/sstv-10/index.m3u8
-#EXTINF:-1 tvg-id="3" tvg-name="大湾区卫视" tvg-logo="http://10.1.0.151:5180/logo/大湾区卫视.png" group-title="☘️广东频道",大湾区卫视
-http://222.128.55.152:9080/live/dwq.m3u8
-#EXTINF:-1 tvg-id="4" tvg-name="广州综合" tvg-logo="http://10.1.0.151:5180/logo/广州综合.png" group-title="☘️广东频道",广州综合
+#EXTINF:-1 tvg-id="3" tvg-name="广州综合" tvg-logo="http://10.1.0.219:5180/logo/广州综合.png" group-title="☘️广东频道",广州综合
 http://tencentplaygzrb01.gztv.com/live/zonghes.m3u8
-#EXTINF:-1 tvg-id="4" tvg-name="广州综合" tvg-logo="http://10.1.0.151:5180/logo/广州综合.png" group-title="☘️广东频道",广州综合
-https://tencentplaywebsite.gztv.com/live/zonghes.m3u8?txSecret=751b5ecd94a0d9d34c7e37e25bb8b27a&txTime=193108637cb
-#EXTINF:-1 tvg-id="4" tvg-name="广州综合" tvg-logo="http://10.1.0.151:5180/logo/广州综合.png" group-title="☘️广东频道",广州综合
-https://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=dce137597806f62ae6fdfc40328a336e&txTime=191b5fc1c86
+#EXTINF:-1 tvg-id="3" tvg-name="广州综合" tvg-logo="http://10.1.0.219:5180/logo/广州综合.png" group-title="☘️广东频道",广州综合
+https://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=6d9c0311929fc12857f6b810fab0188b&txTime=1913a3ed516
