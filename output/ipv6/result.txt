@@ -1,5 +1,5 @@
 🕘️更新时间,#genre#
-2026-03-05 10:42:08,http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001022/index.m3u8
+2026-03-05 11:36:59,http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001022/index.m3u8
 
 📺央视频道,#genre#
 CCTV-1,http://iptvrr.sh.chinamobile.com:6060/cms001/ch00000090990000001022/index.m3u8
@@ -287,3 +287,5 @@ CETV-4,http://[2409:8087:5e08:24::2]:6610/000000001000/5000000011000031126/index
 深圳卫视,http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226313/index.m3u8
 深圳卫视,http://[2409:8087:1a0a:df::404b]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226313/index.m3u8
 深圳卫视,http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/PLTV/2/224/3221225739/2.m3u8
+
+☘️数字频道,#genre#
