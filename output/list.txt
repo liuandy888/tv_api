@@ -1,0 +1,24 @@
+🕘️更新时间,#genre#
+2026-03-08 11:11:45,http://119.123.176.46:8086/hls/2/index.m3u8
+
+📺央视频道,#genre#
+CCTV-1,http://119.123.176.46:8086/hls/2/index.m3u8
+CCTV-3,http://119.123.176.46:8086/hls/4/index.m3u8
+CCTV-4,http://119.123.176.46:8086/hls/5/index.m3u8
+CCTV-7,http://119.123.176.46:8086/hls/8/index.m3u8
+CCTV-9,http://119.123.176.46:8086/hls/10/index.m3u8
+CCTV-10,http://119.123.176.46:8086/hls/11/index.m3u8
+CCTV-11,http://119.123.176.46:8086/hls/12/index.m3u8
+CCTV-16,http://119.123.176.46:8086/hls/17/index.m3u8
+
+📡卫视频道,#genre#
+广东卫视,http://119.123.176.46:8086/hls/44/index.m3u8
+湖南卫视,http://119.123.176.46:8086/hls/55/index.m3u8
+北京卫视,http://119.123.176.46:8086/hls/131/index.m3u8
+安徽卫视,http://119.123.176.46:8086/hls/137/index.m3u8
+贵州卫视,http://119.123.176.46:8086/hls/143/index.m3u8
+吉林卫视,http://119.123.176.46:8086/hls/150/index.m3u8
+深圳卫视,http://119.123.176.46:8086/hls/79/index.m3u8
+天津卫视,http://119.123.176.46:8086/hls/140/index.m3u8
+
+☘️广东频道,#genre#
