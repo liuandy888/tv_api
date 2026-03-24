@@ -1,34 +1,37 @@
 🕘️更新时间,#genre#
-2026-03-23 17:56:58,http://103.40.13.74:2026/migu1080.php?id=608807420
+2026-03-24 13:05:27,http://103.40.13.74:2026/migu1080.php?id=608807420
 
 📺央视频道,#genre#
 CCTV-1,http://103.40.13.74:2026/migu1080.php?id=608807420
-CCTV-1,http://119.123.176.175:8086/hls/2/index.m3u8
+CCTV-1,http://119.123.176.52:8086/hls/2/index.m3u8
 CCTV-2,http://103.40.13.74:2026/migu1080.php?id=631780532
-CCTV-2,http://119.123.176.175:8086/hls/3/index.m3u8
+CCTV-2,http://119.123.176.52:8086/hls/3/index.m3u8
 CCTV-3,http://103.40.13.74:2026/migu1080.php?id=624878271
-CCTV-3,http://119.123.176.175:8086/hls/4/index.m3u8
+CCTV-3,http://119.123.176.52:8086/hls/4/index.m3u8
 CCTV-4,http://103.40.13.74:2026/migu1080.php?id=631780421
 CCTV-5,http://103.40.13.74:2026/migu1080.php?id=641886683
-CCTV-5,http://119.123.176.175:8086/hls/6/index.m3u8
+CCTV-5,http://119.123.176.52:8086/hls/6/index.m3u8
 CCTV-5+,http://103.40.13.74:2026/migu1080.php?id=641886773
-CCTV-5+,http://119.123.176.175:8086/hls/252/index.m3u8
+CCTV-5+,http://119.123.176.52:8086/hls/252/index.m3u8
 CCTV-6,http://103.40.13.74:2026/migu1080.php?id=624878396
-CCTV-6,http://119.123.176.175:8086/hls/7/index.m3u8
+CCTV-6,http://119.123.176.52:8086/hls/7/index.m3u8
 CCTV-7,http://103.40.13.74:2026/migu1080.php?id=673168121
 CCTV-8,http://103.40.13.74:2026/migu1080.php?id=624878356
 CCTV-9,http://103.40.13.74:2026/migu1080.php?id=673168140
-CCTV-9,http://119.123.176.175:8086/hls/10/index.m3u8
+CCTV-9,http://119.123.176.52:8086/hls/10/index.m3u8
 CCTV-10,http://103.40.13.74:2026/migu1080.php?id=624878405
-CCTV-10,http://119.123.176.175:8086/hls/11/index.m3u8
+CCTV-10,http://119.123.176.52:8086/hls/11/index.m3u8
 CCTV-11,http://103.40.13.74:2026/migu1080.php?id=667987558
+CCTV-11,http://119.123.176.52:8086/hls/12/index.m3u8
 CCTV-12,http://103.40.13.74:2026/migu1080.php?id=673168185
+CCTV-12,http://119.123.176.52:8086/hls/13/index.m3u8
 CCTV-13,http://103.40.13.74:2026/migu1080.php?id=608807423
-CCTV-13,http://119.123.176.175:8086/hls/14/index.m3u8
+CCTV-13,http://119.123.176.52:8086/hls/14/index.m3u8
 CCTV-14,http://103.40.13.74:2026/migu1080.php?id=624878440
-CCTV-14,http://119.123.176.175:8086/hls/15/index.m3u8
+CCTV-14,http://119.123.176.52:8086/hls/15/index.m3u8
 CCTV-15,http://103.40.13.74:2026/migu1080.php?id=673168223
-CCTV-16,http://119.123.179.50:8086/hls/17/index.m3u8
+CCTV-15,http://119.123.176.52:8086/hls/16/index.m3u8
+CCTV-16,http://119.123.176.52:8086/hls/17/index.m3u8
 
 💰央视付费频道,#genre#
 
@@ -39,8 +42,8 @@ CCTV-16,http://119.123.179.50:8086/hls/17/index.m3u8
 北京卫视,http://119.123.176.46:8086/hls/131/index.m3u8
 湖北卫视,http://103.40.13.74:2026/migu1080.php?id=947472496
 安徽卫视,http://119.123.176.46:8086/hls/137/index.m3u8
-东方卫视,http://107.150.60.122/live/dfwshd.m3u8
 东方卫视,http://103.40.13.74:2026/migu1080.php?id=651632648
+东方卫视,http://107.150.60.122/live/dfwshd.m3u8
 东南卫视,http://103.40.13.74:2026/migu1080.php?id=849116810
 贵州卫视,http://119.123.176.46:8086/hls/143/index.m3u8
 海南卫视,http://103.40.13.74:2026/migu1080.php?id=947472502
@@ -63,14 +66,14 @@ CCTV-16,http://119.123.179.50:8086/hls/17/index.m3u8
 广东民生,http://119.123.176.46:8086/hls/39/index.m3u8
 大湾区卫视,http://103.40.13.74:2026/migu1080.php?id=608917627
 广州综合,http://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=c8dbe86d6f86eb1a21999ab479fd5667&txTime=18d3c4690e8
-广州综合,http://tencentplaygzrb01.gztv.com/live/zonghes.m3u8
 广州综合,http://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=f0147ae6453a80f5989f382368b72aad&txTime=18d00acf487
+广州综合,http://tencentplaygzrb01.gztv.com/live/zonghes.m3u8
 
 ☘️湖南频道,#genre#
 湖南都市,http://42.48.45.143:808/hls/20/index.m3u8
 湖南都市,http://113.241.133.223:85/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-湖南经视,http://113.241.133.223:85/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南经视,http://42.48.45.143:808/hls/27/index.m3u8
+湖南经视,http://113.241.133.223:85/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南电影,http://42.48.45.143:808/hls/22/index.m3u8
 湖南电影,http://113.241.133.223:85/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南教育,http://42.48.45.143:808/hls/26/index.m3u8
@@ -78,24 +81,24 @@ CCTV-16,http://119.123.179.50:8086/hls/17/index.m3u8
 湖南娱乐,http://42.48.45.143:808/hls/24/index.m3u8
 湖南国际,http://113.241.133.223:85/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南公共,http://113.241.133.223:85/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
-金鹰纪实,http://113.241.133.223:85/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
 金鹰纪实,http://42.48.45.143:808/hls/25/index.m3u8
+金鹰纪实,http://113.241.133.223:85/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
 
 🌊港·澳·台,#genre#
-翡翠台,http://183.234.143.5:9901/tsfile/live/1006_1.m3u8
-翡翠台,http://120.198.86.186:9901/tsfile/live/1007_1.m3u8?key=txiptv
 翡翠台,http://120.238.84.45:9901/tsfile/live/1103_1.m3u8?key=txiptv
-翡翠台,http://183.234.143.5:85/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
-翡翠台,http://dbm.cc.cd:20002/smt3.2.1.php?id=jade_xue
-明珠台,http://120.238.84.45:9901/tsfile/live/1000_1.m3u8?key=txiptv
+翡翠台,http://120.198.86.186:9901/tsfile/live/1007_1.m3u8?key=txiptv
+翡翠台,http://183.234.143.5:9901/tsfile/live/1006_1.m3u8
+翡翠台,http://dbm.de5.net/smt.php?id=jade_twn
+翡翠台,http://r.jdshipin.com/qClQf
 明珠台,http://dbm.cc.cd:20002/smt3.2.1.php?id=pearl_twn
 明珠台,http://120.198.86.186:9901/tsfile/live/1009_1.m3u8?key=txiptv
+明珠台,http://120.238.84.45:9901/tsfile/live/1000_1.m3u8?key=txiptv
 明珠台,http://183.234.143.5:9901/tsfile/live/1005_1.m3u8
 凤凰中文,http://dbm.cc.cd:20003/live/fhzw/stream.m3u8
-凤凰中文,http://dbm.cc.cd:20002/smt3.2.1.php?id=phoenixtv_hd
-凤凰中文,http://120.238.84.45:9901/tsfile/live/1007_1.m3u8?key=txiptv
 凤凰中文,http://183.234.143.5:9901/tsfile/live/1004_1.m3u8
+凤凰中文,http://120.238.84.45:9901/tsfile/live/1007_1.m3u8?key=txiptv
 凤凰中文,http://120.198.86.186:9901/tsfile/live/1037_1.m3u8?key=txiptv
+凤凰中文,http://dbm.cc.cd:20002/smt3.2.1.php?id=phoenixtv_hd
 凤凰资讯,http://dbm.cc.cd:20002/smt3.2.1.php?id=phoenixinfo_hd
 凤凰香港,http://dbm.cc.cd:20002/smt3.2.1.php?id=hkphoenix_twn
 
