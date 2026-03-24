@@ -1,2 +1,13 @@
 🕘️更新时间,#genre#
-2026-03-10 11:36:59,https://goodiptv.club/douyu/3949681
+2026-03-24 11:36:59,https://goodiptv.club/douyu/3949681
+CCTV1,http://8.138.7.223/tv/cctv1.php
+CCTV2,http://8.138.7.223/tv/cctv2.php
+CCTV3,http://8.138.7.223/tv/cctv3.php
+CCTV4,http://8.138.7.223/tv/cctv4.php
+CCTV5,http://8.138.7.223/tv/cctv5.php
+CCTV6,http://8.138.7.223/tv/cctv6.php
+CCTV7,http://8.138.7.223/tv/cctv7.php
+CCTV8,http://8.138.7.223/tv/cctv8.php
+CCTV13,http://8.138.7.223/tv/cctv13.php
+重温经典,http://8.138.7.223/tv/cwjd.php
+
