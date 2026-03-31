@@ -1343,7 +1343,7 @@
         {
             "name": "cmcc",
             "type": 0,
-            "url": "http://127.0.0.1:9978/proxy?do=live&url=https://taoiptv.com/lives/44015.txt?token=c0c757148f618f9e",
+            "url": "http://127.0.0.1:9978/proxy?do=live&url=https://taoiptv.com/lives/44015.txt?token=c6c62fcb82906b84",
             "playerType": 2,
             "timeout": 10
         },
