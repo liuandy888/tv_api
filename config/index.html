@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<title>我的常用导航</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI}
+    
+    body{
+      background: center center fixed;
+      background-size: cover;
+      color: #fff;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    body::before{
+      content: "";
+      position: fixed;
+      left:0; top:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.45);
+      z-index: -1;
+    }
+
+    .title{
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    }
+
+    .card {
+      background: transparent !important;
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border: none;
+    }
+
+    .card h2 {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      border-left: 4px solid #4ade80;
+      padding-left: 8px;
+      text-shadow: 0 0 6px rgba(0,0,0,0.8);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 10px;
+    }
+
+    .item {
+      background: transparent;
+      color: #fff;
+      padding: 12px;
+      text-align: center;
+      border-radius: 8px;
+      text-decoration: none;
+      text-shadow: 0 0 6px rgba(0,0,0,0.8);
+      transition: 0.2s;
+    }
+
+    .item:hover {
+      background: #4ade80;
+      color: #000;
+      text-shadow: none;
+    }
+  </style>
+
+
+  <!-- ========== 统计代码（Umami） ========== -->
+  <!-- 你之后只需要替换这里的 ID 即可 -->
+  <script async src="https://umami.is/script.js" data-website-id="这里替换成你自己的ID"></script>
+ 
+</head>
+
+<body>
+
+  <h1 class="title">🔖 我的常用导航</h1>
+
+  <div class="card">
+    <h2>💼 工作效率</h2>
+    <div class="grid">
+      <a class="item" href="https://www.baidu.com" target="_blank">百度</a>
+      <a class="item" href="https://github.com" target="_blank">GitHub</a>
+      <a class="item" href="https://tpass.guangdong.chinatax.gov.cn:8443/#/login?redirect_uri=https%3A%2F%2Fetax.guangdong.chinatax.gov.cn%3A8443%2Fmhzx%2Fapi%2Fmh%2Ftpass%2Fcode&client_id=c5djdncfa7nj4n2cajna2j68cndbj2fc&response_type=code&state=274c3c01299d40e080f8bca0aa5556c6" target="_blank">tax</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🎬 娱乐</h2>
+    <div class="grid">
+      <a class="item" href="https://www.bilibili.com" target="_blank">B站</a>
+      <a class="item" href="https://www.youtube.com" target="_blank">YouTube</a>
+    </div>
+  </div>
+ <script>
+    // 随机大海/风景背景
+    const bgImages = [
+      "https://picsum.photos/id/1039/1920/1080",
+      "https://picsum.photos/id/1043/1920/1080",
+      "https://picsum.photos/id/1050/1920/1080",
+      "https://picsum.photos/id/1052/1920/1080",
+      "https://picsum.photos/id/1069/1920/1080"
+    ];
+    const randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
+    document.body.style.backgroundImage = `url(${randomBg})`;
+  </script>
+</body>
+</html>
