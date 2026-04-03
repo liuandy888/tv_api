@@ -3,38 +3,34 @@
 <head>
   <meta charset="UTF-8">
 <title>我的常用导航</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- 手机端适配 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <style>
     *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI}
     
+    html {
+      font-size: 16px;
+    }
+
     body{
       background: center center fixed;
       background-size: cover;
       color: #fff;
-      padding: 2rem;
+      padding: 1rem; /* 手机边距更小 */
       max-width: 1200px;
       margin: 0 auto;
-      position: relative;
-    }
-    
-    body::before{
-      content: "";
-      position: fixed;
-      left:0; top:0; right:0; bottom:0;
-      background: rgba(0,0,0,0.45);
-      z-index: -1;
     }
 
     .title{
       text-align: center;
       font-size: 2rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       color: #fff;
       text-shadow: 0 0 10px rgba(0,0,0,0.7);
     }
 
     .card {
-      background: transparent !important;
+      background: transparent;
       border-radius: 12px;
       padding: 1rem;
       margin-bottom: 1.5rem;
@@ -42,7 +38,7 @@
     }
 
     .card h2 {
-      font-size: 1.1rem;
+      font-size: 1.2rem; /* 手机标题更大 */
       color: #fff;
       margin-bottom: 1rem;
       border-left: 4px solid #4ade80;
@@ -59,7 +55,8 @@
     .item {
       background: transparent;
       color: #fff;
-      padding: 12px;
+      padding: 14px; /* 按钮更高 */
+      font-size: 1rem; /* 手机文字更大 */
       text-align: center;
       border-radius: 8px;
       text-decoration: none;
@@ -71,6 +68,21 @@
       background: #4ade80;
       color: #000;
       text-shadow: none;
+    }
+
+    /* 手机专用优化 */
+    @media (max-width: 768px) {
+      .title {
+        font-size: 1.8rem;
+      }
+      .item {
+        font-size: 1rem;
+        padding: 16px 12px;
+      }
+      .grid {
+        grid-template-columns: repeat(3, 1fr); /* 手机3列更舒服 */
+        gap: 10px;
+      }
     }
   </style>
 
