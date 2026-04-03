@@ -17,6 +17,42 @@
       font-family:system-ui,-apple-system,Segoe UI;
       overflow-x: hidden;
     }
+/* 🔥 顶部滚动发光文字 */
+    .marquee {
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      /*background: rgba(0,0,0,0.3);*/
+      padding: 6px 0;
+      overflow: hidden;
+      z-index: 999;
+    }
+    .marquee-inner {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 12s linear infinite;
+      font-weight: bold;
+      font-size: 15px;
+      /* 🔥 颜色循环 + 闪烁发光 */
+      animation: marquee 12s linear infinite, glow 1.2s ease-in-out infinite alternate, colorLoop 8s linear infinite;
+    }
+    @keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }}
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #fff, 0 0 10px #fff; }
+      to { text-shadow: 0 0 15px #fff, 0 0 30px #fff; }
+    }
+    @keyframes colorLoop {
+      0% { color: #fff; }
+      20% { color: #4ade80; }
+      40% { color: #60a5fa; }
+      60% { color: #f472b6; }
+      80% { color: #fbbf24; }
+      100% { color: #fff; }
+    }
+
 
     #stars {
       position: fixed;
@@ -128,6 +164,10 @@
 </head>
 
 <body>
+<!-- 🔥 顶部滚动欢迎文字 -->
+<div class="marquee">
+  <div class="marquee-inner">欢迎进入 · 常用导航 · 祝您使用愉快</div>
+</div>
 <canvas id="stars"></canvas>
 <div class="wave wave1"></div>
 <div class="wave wave2"></div>
