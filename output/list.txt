@@ -83,7 +83,7 @@ CCTV-17,http://120.238.84.45:9901/tsfile/live/1048_1.m3u8?key=txiptv
 浙江卫视,http://120.198.86.186:9901/tsfile/live/1059_1.m3u8?key=txiptv
 浙江卫视,http://120.233.73.4:19901/tsfile/live/1008_1.m3u8?key=txiptv
 浙江卫视,http://120.238.84.45:9901/tsfile/live/1044_1.m3u8?key=txiptv
-湖南卫视,http://58.46.28.205:9999/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0
+湖南卫视,http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hunws
 湖南卫视,http://107.150.60.122/live/hnwshd.m3u8
 湖南卫视,http://120.198.86.186:9901/tsfile/live/1058_1.m3u8?key=txiptv
 湖南卫视,http://120.233.73.4:19901/tsfile/live/1007_1.m3u8?key=txiptv
@@ -184,18 +184,18 @@ CCTV-17,http://120.238.84.45:9901/tsfile/live/1048_1.m3u8?key=txiptv
 深圳卫视,http://120.238.84.45:9901/tsfile/live/1054_1.m3u8?key=txiptv
 
 ☘️湖南频道,#genre#
-湖南都市,http://113.241.133.223:85/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
+湖南都市,http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hunds
 湖南都市,http://110.53.235.13:10085/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南都市,http://42.48.45.143:808/hls/20/index.m3u8
-湖南经视,http://110.53.235.13:10085/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
+湖南经视,http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hunjs
 湖南经视,http://113.241.133.223:85/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南电视剧,http://58.46.28.205:9999/tsfile/live/1094_1.m3u8?key=txiptv&playlive=1&authid=0
-湖南电影,http://42.48.45.143:808/hls/22/index.m3u8
+湖南电影,http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hundy
 湖南电影,http://113.241.133.223:85/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南电影,http://58.46.28.205:9999/tsfile/live/1093_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南爱晚,http://58.46.28.205:9999/tsfile/live/1097_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南教育,http://110.53.235.13:10085/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
-湖南娱乐,http://42.48.45.143:808/hls/24/index.m3u8
+湖南娱乐,http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hunyl
 湖南娱乐,http://113.241.133.223:85/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南娱乐,http://58.46.28.205:9999/tsfile/live/1096_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南国际,http://113.241.133.223:85/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
