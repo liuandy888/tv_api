@@ -1343,7 +1343,7 @@
         {
             "name": "cmcc",
             "type": 0,
-            "url": "http://127.0.0.1:9978/proxy?do=live&url=https://taoiptv.com/lives/44015.txt?token=c6c62fcb82906b84",
+            "url": "http://127.0.0.1:9978/proxy?do=live&url=https://iptv.cqshushu.com/jiekou.php?jk=txt&token=a5a9cf70858c875a58b4895d7779f191",
             "playerType": 2,
             "timeout": 10
         },
@@ -1382,7 +1382,7 @@
         {
             "name": "肥羊B站直播",
             "type": 0,
-            "url": "http://127.0.0.1:9978/proxy?do=live&url=https://iptv.cqshushu.com/iptv807.php?jk=txt&token=a5a9cf70858c875a58b4895d7779f191",
+            "url": "http://127.0.0.1:9978/proxy?do=live&url=https://sub.ottiptv.cc/bililive.m3u",
             "playerType": 2,
             "timeout": 10,
             "ua": "okHttp/Mod-1.5.0.0"
