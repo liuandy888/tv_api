@@ -1,7 +1,7 @@
 {
     "spider": "http://oss4liview.moji.com/thd_file/2026/01/26/0e8629c873fea38d04bc58cbeb28c3c5.jpg;md5;127ea82cb8bf8a82f0cf64da66e39b60",
     "wallpaper": "http://127.0.0.1:9978/proxy?do=wall",
-    "logo": "https://storage.7x24cc.com/storage-server/presigned/ss1/a6-online-fileupload/newMediaImage/ACB34B_773_photo_2022-09-14_00-00-57_20251204145106336newMediaImage.jpg",
+    "logo": "./log7.gif",
  "notice": "！！！欢迎使用！！！",
   "notice_speed": 1,
     "sites": [
