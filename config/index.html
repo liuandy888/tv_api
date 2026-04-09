@@ -162,6 +162,50 @@
       0% { background-position-x: 0; }
       100% { background-position-x: 1440px; }
     }
+/* 系统信息面板 */
+.info-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+  display: none;
+}
+.info-box {
+  background: rgba(20, 20, 30, 0.85);
+  color: #fff;
+  padding: 22px 24px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 380px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  font-size: 14px;
+  line-height: 1.6;
+  position: relative;
+}
+.info-box h3 {
+  margin: 0 0 12px;
+  color: #4ade80;
+  font-size: 18px;
+}
+.info-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 18px;
+}
+.info-close:hover {
+  color: #fff;
+}
   </style>
 
   <script async src="https://umami.is/script.js" data-website-id="这里替换成你自己的ID"></script>
@@ -199,6 +243,7 @@
   <h2>🛠️ 工具</h2>
     <div class="grid">
       <a class="item" href="https://tools.upx8.com/ip/" target="_blank">iptool</a>
+    <a class="item" onclick="showInfo()">系统信息</a>
   </div>
 </div>
 
@@ -255,7 +300,134 @@
     canvas.width = w;
     canvas.height = h;
   };
-</script>
+function showInfo() {
+  let info = '';
+  const ua = navigator.userAgent;
 
+  // 1. 精准识别浏览器
+  let browser = '未知浏览器';
+  if (ua.includes('Edg')) browser = 'Edge';
+  else if (ua.includes('Chrome')) browser = 'Chrome';
+  else if (ua.includes('Firefox')) browser = 'Firefox';
+  else if (ua.includes('Safari')) browser = 'Safari';
+  else if (ua.includes('OPR') || ua.includes('Opera')) browser = 'Opera';
+  else if (ua.includes('Via')) browser = 'Via';
+
+  // 2. 精准计算真实物理分辨率+缩放
+  const dpr = window.devicePixelRatio || 1;
+  const logicalWidth = screen.width;
+  const logicalHeight = screen.height;
+  const physicalWidth = Math.round(logicalWidth * dpr);
+  const physicalHeight = Math.round(logicalHeight * dpr);
+  const scalePercent = Math.round(dpr * 100) + '%';
+
+  // 3. 精准识别系统位数
+  let osArch = '未知系统';
+  if (navigator.platform.includes('Win')) {
+    osArch = ua.includes('Win64') || ua.includes('x64') ? 'Windows 64位' : 'Windows 32位(浏览器)';
+  } else if (navigator.platform.includes('Mac')) {
+    osArch = 'macOS';
+  } else if (navigator.platform.includes('Linux')) {
+    osArch = 'Linux';
+  } else if (navigator.platform.includes('Android')) {
+    osArch = 'Android';
+  } else if (navigator.platform.includes('iPhone') || ua.includes('iPhone')) {
+    osArch = 'iOS';
+  }
+
+  // 4. 屏幕刷新率（兼容所有浏览器）
+  let refreshRate = '未知';
+  if (window.screen && window.screen.refreshRate) {
+    refreshRate = window.screen.refreshRate + 'Hz';
+  } else if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    //  fallback 估算
+    refreshRate = '60Hz (估算)';
+  }
+
+  // 5. 硬件信息（通过WebGL读取显卡/显存）
+  let gpuInfo = '未知';
+  try {
+    const canvas = document.createElement('canvas');
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    if (gl) {
+      const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+      if (debugInfo) {
+        gpuInfo = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+        // 精简显示，避免过长
+        if (gpuInfo.length > 30) gpuInfo = gpuInfo.substring(0, 30) + '...';
+      }
+    }
+  } catch (e) {}
+
+  // 6. 电池信息（手机/笔记本可用，桌面端兼容）
+  let batteryInfo = '不支持';
+  let batteryHealth = '不支持';
+  if (navigator.getBattery) {
+    navigator.getBattery().then(battery => {
+      batteryInfo = `${Math.round(battery.level * 100)}% ${battery.charging ? '(充电中)' : '(未充电)'}`;
+      // 电池健康度（仅部分安卓/Chrome支持，iOS不开放）
+      if (battery.health) {
+        batteryHealth = `${Math.round(battery.health * 100)}%`;
+      }
+      // 动态更新面板
+      const content = document.getElementById('infoContent');
+      content.innerText = info + `\n【电池状态】\n电量: ${batteryInfo}\n电池健康: ${batteryHealth}`;
+    }).catch(() => {
+      // 权限拒绝时静默处理
+    });
+  }
+
+  // 7. 组装基础信息
+  info += '【设备信息】\n';
+  info += '浏览器: ' + browser + '\n';
+  info += '系统: ' + osArch + '\n';
+  info += '物理分辨率: ' + physicalWidth + ' × ' + physicalHeight + '\n';
+  info += '逻辑分辨率: ' + logicalWidth + ' × ' + logicalHeight + '\n';
+  info += '系统缩放: ' + scalePercent + '\n';
+  info += '屏幕刷新率: ' + refreshRate + '\n';
+  info += '颜色深度: ' + screen.colorDepth + '位\n';
+  info += '显卡: ' + gpuInfo + '\n\n';
+
+  info += '【网络状态】\n';
+  info += '在线状态: ' + (navigator.onLine ? '已连接' : '未连接') + '\n';
+  if (navigator.connection) {
+    info += '网络类型: ' + (navigator.connection.effectiveType || '未知') + '\n';
+  }
+  info += '\n';
+
+  info += '【浏览器标识】\n';
+  info += ua.substring(0, 120) + '...\n\n';
+
+  // 显示面板
+  document.getElementById('infoContent').innerText = info;
+  document.getElementById('infoModal').style.display = 'flex';
+
+  // 8. 稳定获取IP+城市定位（不报错）
+  fetch('https://ipapi.co/json/')
+  .then(r => r.json())
+  .then(d => {
+    let ipInfo = '【IP 位置】\n';
+    ipInfo += 'IP: ' + (d.ip || '未知') + '\n';
+    ipInfo += '地区: ' + (d.region || '未知') + '\n';
+    ipInfo += '城市: ' + (d.city || '未知') + '\n';
+    ipInfo += '运营商: ' + (d.org || '未知');
+    info += ipInfo;
+    document.getElementById('infoContent').innerText = info;
+  }).catch(() => {
+    // 接口失败不影响面板显示，静默处理
+  });
+}
+
+function closeInfo() {
+  document.getElementById('infoModal').style.display = 'none';
+}
+</script>
 </body>
+<div class="info-modal" id="infoModal">
+  <div class="info-box">
+    <div class="info-close" onclick="closeInfo()">×</div>
+    <h3>📟 系统信息</h3>
+    <pre id="infoContent" style="white-space: pre-wrap; margin:0;"></pre>
+  </div>
+</div>
 </html>
