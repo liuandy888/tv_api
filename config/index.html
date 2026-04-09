@@ -335,16 +335,15 @@ function showInfo() {
     osArch = 'iOS';
   }
 
-  // 4. 屏幕刷新率（兼容所有浏览器）
+  // 4. 屏幕刷新率
   let refreshRate = '未知';
   if (window.screen && window.screen.refreshRate) {
     refreshRate = window.screen.refreshRate + 'Hz';
-  } else if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-    //  fallback 估算
+  } else {
     refreshRate = '60Hz (估算)';
   }
 
-  // 5. 硬件信息（通过WebGL读取显卡/显存）
+  // 5. 硬件信息（显卡）
   let gpuInfo = '未知';
   try {
     const canvas = document.createElement('canvas');
@@ -353,31 +352,12 @@ function showInfo() {
       const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
       if (debugInfo) {
         gpuInfo = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
-        // 精简显示，避免过长
         if (gpuInfo.length > 30) gpuInfo = gpuInfo.substring(0, 30) + '...';
       }
     }
   } catch (e) {}
 
-  // 6. 电池信息（手机/笔记本可用，桌面端兼容）
-  let batteryInfo = '不支持';
-  let batteryHealth = '不支持';
-  if (navigator.getBattery) {
-    navigator.getBattery().then(battery => {
-      batteryInfo = `${Math.round(battery.level * 100)}% ${battery.charging ? '(充电中)' : '(未充电)'}`;
-      // 电池健康度（仅部分安卓/Chrome支持，iOS不开放）
-      if (battery.health) {
-        batteryHealth = `${Math.round(battery.health * 100)}%`;
-      }
-      // 动态更新面板
-      const content = document.getElementById('infoContent');
-      content.innerText = info + `\n【电池状态】\n电量: ${batteryInfo}\n电池健康: ${batteryHealth}`;
-    }).catch(() => {
-      // 权限拒绝时静默处理
-    });
-  }
-
-  // 7. 组装基础信息
+  // 6. 基础信息
   info += '【设备信息】\n';
   info += '浏览器: ' + browser + '\n';
   info += '系统: ' + osArch + '\n';
@@ -398,33 +378,57 @@ function showInfo() {
   info += '【浏览器标识】\n';
   info += ua.substring(0, 120) + '...\n\n';
 
-  // 显示面板
-  document.getElementById('infoContent').innerText = info;
+  // 先占位，保证结构不乱
+  info += '【电池状态】\n加载中...\n\n';
+  info += '【IP 位置】\n加载中...\n';
+
+  const contentEl = document.getElementById('infoContent');
+  contentEl.innerText = info;
   document.getElementById('infoModal').style.display = 'flex';
 
-  // 8. 稳定获取IP+城市定位（不报错）
-  fetch('https://ipapi.co/json/')
-  .then(r => r.json())
-  .then(d => {
-    let ipInfo = '【IP 位置】\n';
-    ipInfo += 'IP: ' + (d.ip || '未知') + '\n';
-    ipInfo += '地区: ' + (d.region || '未知') + '\n';
-    ipInfo += '城市: ' + (d.city || '未知') + '\n';
-    ipInfo += '运营商: ' + (d.org || '未知');
-    info += ipInfo;
-    document.getElementById('infoContent').innerText = info;
-  }).catch(() => {
-    // 接口失败不影响面板显示，静默处理
-  });
-}
 
+  // ==============================
+  // 电池（安全加载）
+  // ==============================
+  if (navigator.getBattery) {
+    navigator.getBattery().then(b => {
+      let txt = `【电池状态】\n电量: ${Math.round(b.level*100)}% ${b.charging?'(充电中)':'(未充电)'}\n电池健康: ${b.health?Math.round(b.health*100)+'%':'不支持'}\n\n`;
+      contentEl.innerText = contentEl.innerText.replace(/【电池状态】[\s\S]*?\n\n/, txt);
+    }).catch(()=>{});
+  }
+
+  // ==============================
+  // IP 定位（超强稳定版，多接口自动切换）
+  // ==============================
+  function loadIP() {
+    fetch('https://api.ipapi.is/json/')
+    .then(r=>r.json())
+    .then(d=>{
+      let ip = d.ip || '未知';
+      let loc = `${d.region||'未知'} | ${d.city||'未知'}`;
+      let isp = d.asn||d.org||'未知';
+      let txt = `【IP 位置】\nIP: ${ip}\n地区: ${d.region||'未知'}\n城市: ${d.city||'未知'}\n运营商: ${isp}`;
+      contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, txt);
+    }).catch(()=>{
+      // 备用接口
+      fetch('https://ipinfo.io/json')
+      .then(r=>r.json())
+      .then(d=>{
+        let txt = `【IP 位置】\nIP: ${d.ip}\n地区: ${d.region}\n城市: ${d.city}\n运营商: ${d.org}`;
+        contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, txt);
+      });
+    });
+  }
+
+  loadIP();
+}
 function closeInfo() {
   document.getElementById('infoModal').style.display = 'none';
 }
 </script>
 </body>
-<div class="info-modal" id="infoModal">
-  <div class="info-box">
+<div class="info-modal" id="infoModal" onclick="if(event.target==this) closeInfo()">
+  <div class="info-box" onclick="event.stopPropagation()">
     <div class="info-close" onclick="closeInfo()">×</div>
     <h3>📟 系统信息</h3>
     <pre id="infoContent" style="white-space: pre-wrap; margin:0;"></pre>
