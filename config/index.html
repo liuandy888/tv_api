@@ -401,14 +401,8 @@ function showInfo() {
   // IP 定位（超强稳定版，多接口自动切换）
   // ==============================
   function loadIP() {
-    fetch('https://api.ipapi.is/json/')
-    .then(r=>r.json())
-    .then(d=>{
-      let ip = d.ip || '未知';
-      let loc = `${d.region||'未知'} | ${d.city||'未知'}`;
-      let isp = d.asn||d.org||'未知';
-      let txt = `【IP 位置】\nIP: ${ip}\n地区: ${d.region||'未知'}\n城市: ${d.city||'未知'}\n运营商: ${isp}`;
-      contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, txt);
+    fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{
+    info += '【IP 信息】\nIP: '+d.ip+'\n地区: '+d.region+'\n城市: '+d.city;
     }).catch(()=>{
       // 备用接口
       fetch('https://ipinfo.io/json')
