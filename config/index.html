@@ -303,15 +303,27 @@
 function showInfo() {
   let info = '';
   const ua = navigator.userAgent;
-
-  // 1. 精准识别浏览器
-  let browser = '未知浏览器';
-  if (ua.includes('Edg')) browser = 'Edge';
-  else if (ua.includes('Chrome')) browser = 'Chrome';
-  else if (ua.includes('Firefox')) browser = 'Firefox';
-  else if (ua.includes('Safari')) browser = 'Safari';
-  else if (ua.includes('OPR') || ua.includes('Opera')) browser = 'Opera';
-  else if (ua.includes('Via')) browser = 'Via';
+//1.浏览器 + 真实完整版本号
+let browser = '未知浏览器';
+if (ua.includes('Edg')) {
+  let v = ua.match(/Edg\/([\d.]+)/)?.[1] || '';
+  browser = 'Edge ' + v.replace(/\.0\.0\.0$/, '');
+} else if (ua.includes('Chrome')) {
+  let v = ua.match(/Chrome\/([\d.]+)/)?.[1] || '';
+  browser = 'Chrome ' + v.replace(/\.0\.0\.0$/, '');
+} else if (ua.includes('Firefox')) {
+  let v = ua.match(/Firefox\/([\d.]+)/)?.[1] || '';
+  browser = 'Firefox ' + v;
+} else if (ua.includes('Safari') && !ua.includes('Chrome')) {
+  let v = ua.match(/Version\/([\d.]+)/)?.[1] || '';
+  browser = 'Safari ' + v;
+} else if (ua.includes('OPR') || ua.includes('Opera')) {
+  let v = ua.match(/OPR\/([\d.]+)/)?.[1] || '';
+  browser = 'Opera ' + v;
+} else if (ua.includes('Via')) {
+  let v = ua.match(/Via\/([\d.]+)/)?.[1] || '';
+  browser = 'Via ' + v;
+}
 
   // 2. 精准计算真实物理分辨率+缩放
   const dpr = window.devicePixelRatio || 1;
@@ -322,18 +334,46 @@ function showInfo() {
   const scalePercent = Math.round(dpr * 100) + '%';
 
   // 3. 精准识别系统位数
-  let osArch = '未知系统';
-  if (navigator.platform.includes('Win')) {
+let osArch = '未知系统';
+// Windows 版本识别（能区分 Win10 / Win11）
+if (navigator.platform.includes('Win')) {
+  if (ua.includes('Windows NT 11.0')) {
+    osArch = 'Windows 11 64位';
+  } else if (ua.includes('Windows NT 10.0')) {
+    osArch = 'Windows 10 64位';
+  } else if (ua.includes('Windows NT 6.3')) {
+    osArch = 'Windows 8.1';
+  } else if (ua.includes('Windows NT 6.2')) {
+    osArch = 'Windows 8';
+  } else if (ua.includes('Windows NT 6.1')) {
+    osArch = 'Windows 7';
+  } else {
     osArch = ua.includes('Win64') || ua.includes('x64') ? 'Windows 64位' : 'Windows 32位(浏览器)';
-  } else if (navigator.platform.includes('Mac')) {
-    osArch = 'macOS';
-  } else if (navigator.platform.includes('Linux')) {
-    osArch = 'Linux';
-  } else if (navigator.platform.includes('Android')) {
-    osArch = 'Android';
-  } else if (navigator.platform.includes('iPhone') || ua.includes('iPhone')) {
-    osArch = 'iOS';
   }
+} 
+
+// Android 版本（Android 10/11/12/13/14/15）
+else if (navigator.platform.includes('Android') || ua.includes('Android')) {
+  const androidVer = ua.match(/Android (\d+)/)?.[1];
+  osArch = androidVer ? `Android ${androidVer}` : 'Android';
+} 
+
+// iOS 版本（iOS 14/15/16/17/18）
+else if (navigator.platform.includes('iPhone') || ua.includes('iPhone')) {
+  const iosVer = ua.match(/OS (\d+)_/)?.[1];
+  osArch = iosVer ? `iOS ${iosVer}` : 'iOS';
+} 
+
+// macOS 版本
+else if (navigator.platform.includes('Mac')) {
+  const macVer = ua.match(/Mac OS X (\d+_\d+)/)?.[1].replace(/_/g, '.');
+  osArch = macVer ? `macOS ${macVer}` : 'macOS';
+} 
+
+// Linux
+else if (navigator.platform.includes('Linux')) {
+  osArch = 'Linux';
+}
 
   // 4. 屏幕刷新率
   let refreshRate = '未知';
@@ -398,22 +438,39 @@ function showInfo() {
   }
 
   // ==============================
-  // IP 定位（超强稳定版，多接口自动切换）
+  // IP 定位
   // ==============================
   function loadIP() {
-    fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{
-    info += '【IP 信息】\nIP: '+d.ip+'\n地区: '+d.region+'\n城市: '+d.city;
-    }).catch(()=>{
-      // 备用接口
+  fetch('https://api.ipapi.is/json/')
+    .then(r => r.json())
+    .then(d => {
+      // 安全提取字段
+      const ip = d.ip || '未知';
+      const region = d.location?.state || d.region || '未知';
+      const city = d.location?.city || d.city || '未知';
+      // 运营商：优先  asn.asn -> isp -> org
+      let isp = '未知';
+      if (d.asn?.org) isp = d.asn.org;
+      else if (d.isp) isp = d.isp;
+      else if (d.org) isp = d.org;
+      const txt = `【IP 位置】\nIP: ${ip}\n地区: ${region}\n城市: ${city}\n运营商: ${isp}`;
+      contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, txt);
+    })
+    .catch(() => {
+      // 后备 API
       fetch('https://ipinfo.io/json')
-      .then(r=>r.json())
-      .then(d=>{
-        let txt = `【IP 位置】\nIP: ${d.ip}\n地区: ${d.region}\n城市: ${d.city}\n运营商: ${d.org}`;
-        contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, txt);
-      });
+        .then(r => r.json())
+        .then(d => {
+          const txt = `【IP 位置】\nIP: ${d.ip}\n地区: ${d.region}\n城市: ${d.city}\n运营商: ${d.org || '未知'}`;
+          contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, txt);
+        })
+        .catch(() => {
+          // 两个都失败，可显示错误提示
+          const txt = `【IP 位置】\nIP 获取失败`;
+          contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, txt);
+        });
     });
-  }
-
+}
   loadIP();
 }
 function closeInfo() {
