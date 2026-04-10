@@ -406,6 +406,7 @@ else if (navigator.platform.includes('Linux')) {
   info += '系统缩放: ' + scalePercent + '\n';
   info += '屏幕刷新率: ' + refreshRate + '\n';
   info += '颜色深度: ' + screen.colorDepth + '位\n';
+  info += "CPU 线程数: " + navigator.hardwareConcurrency + "核\n";
   info += '显卡: ' + gpuInfo + '\n\n';
 
   info += '【网络状态】\n';
