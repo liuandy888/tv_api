@@ -258,23 +258,29 @@ function showInfo() {
   const ua = navigator.userAgent;
 //1.浏览器 + 真实完整版本号
 let browser = '未知浏览器';
-if (ua.includes('Edg')) {
-  let v = ua.match(/Edg\/([\d.]+)/)?.[1] || '';
+if (ua.indexOf('Edg') !== -1) {
+  let match = ua.match(/Edg\/([\d.]+)/);
+  let v = match ? match[1] : '';
   browser = 'Edge ' + v.replace(/\.0\.0\.0$/, '');
-} else if (ua.includes('Chrome')) {
-  let v = ua.match(/Chrome\/([\d.]+)/)?.[1] || '';
+} else if (ua.indexOf('Chrome') !== -1) {
+  let match = ua.match(/Chrome\/([\d.]+)/);
+  let v = match ? match[1] : '';
   browser = 'Chrome ' + v.replace(/\.0\.0\.0$/, '');
-} else if (ua.includes('Firefox')) {
-  let v = ua.match(/Firefox\/([\d.]+)/)?.[1] || '';
+} else if (ua.indexOf('Firefox') !== -1) {
+  let match = ua.match(/Firefox\/([\d.]+)/);
+  let v = match ? match[1] : '';
   browser = 'Firefox ' + v;
-} else if (ua.includes('Safari') && !ua.includes('Chrome')) {
-  let v = ua.match(/Version\/([\d.]+)/)?.[1] || '';
+} else if (ua.indexOf('Safari') !== -1 && ua.indexOf('Chrome') === -1) {
+  let match = ua.match(/Version\/([\d.]+)/);
+  let v = match ? match[1] : '';
   browser = 'Safari ' + v;
-} else if (ua.includes('OPR') || ua.includes('Opera')) {
-  let v = ua.match(/OPR\/([\d.]+)/)?.[1] || '';
+} else if (ua.indexOf('OPR') !== -1 || ua.indexOf('Opera') !== -1) {
+  let match = ua.match(/OPR\/([\d.]+)/);
+  let v = match ? match[1] : '';
   browser = 'Opera ' + v;
-} else if (ua.includes('Via')) {
-  let v = ua.match(/Via\/([\d.]+)/)?.[1] || '';
+} else if (ua.indexOf('Via') !== -1) {
+  let match = ua.match(/Via\/([\d.]+)/);
+  let v = match ? match[1] : '';
   browser = 'Via ' + v;
 }
 
