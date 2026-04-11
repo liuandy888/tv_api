@@ -141,12 +141,9 @@
       background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%234ade80' fill-opacity='0.15' d='M0,192L48,208C96,224,192,256,288,245.3C384,235,480,181,576,160C672,139,768,149,864,154.7C960,160,1056,160,1152,133.3C1248,107,1344,53,1392,26.7L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
       background-size: cover;
       z-index: -1;
-      animation: wave 25s linear infinite;
+      
     }
-    .wave1 { bottom: 0; opacity: 0.3; }
-    .wave2 { bottom: 10px; opacity: 0.2; animation-delay: -5s; }
-    .wave3 { bottom: 15px; opacity: 0.1; animation-delay: -10s; }
-
+   
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -255,32 +252,8 @@
   const randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
   document.body.style.backgroundImage = `url(${randomBg})`;
 
-  // 修复波纹：用 mousedown 触发
-  document.querySelectorAll('.item').forEach(item => {
-    item.addEventListener('mousedown', function (e) {
-      const ripple = document.createElement('span');
-      ripple.classList.add('ripple');
-      const size = Math.max(this.offsetWidth, this.offsetHeight);
-      const rect = this.getBoundingClientRect();
-      ripple.style.width = ripple.style.height = size + 'px';
-      ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
-      ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
-      this.appendChild(ripple);
-      setTimeout(() => {
-        ripple.remove();
-      }, 700);
-    });
-  });
 
-  // 星空
-  const canvas = document.getElementById('stars');
-  const ctx = canvas.getContext('2d');
-  let w = window.innerWidth, h = window.innerHeight;
-  canvas.width = w; canvas.height = h;
-  const stars = Array.from({length:70}, () => ({
-    x: Math.random()*w, y: Math.random()*h, r: Math.random()*1.5+0.2,
-    a: Math.random(), va: Math.random()*0.004+0.001
-  }));
+ 
   function drawStars() {
     ctx.clearRect(0,0,w,h);
     stars.forEach(s => {
