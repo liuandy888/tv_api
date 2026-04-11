@@ -25,6 +25,7 @@
       position: fixed;
       top: 0;
       left: 0;
+       width: 100%;
       overflow: hidden;
       /*background: rgba(0,0,0,0.3);*/
       padding: 6px 0;
@@ -39,10 +40,10 @@
       font-weight: bold;
       font-size: 15px;
       /* 🔥 颜色循环 + 闪烁发光 */
-      animation: marquee 12s linear infinite, glow 1.2s ease-in-out infinite alternate, colorLoop 8s linear infinite;
+      animation: marquee 20s linear infinite, glow 3.2s ease-in-out infinite alternate, colorLoop 8s linear infinite;
     }
     @keyframes marquee {
-  0% { transform: translateX(100%); }
+  0% { transform: translateX(100vw); }
   100% { transform: translateX(-100%); }}
     @keyframes glow {
       from { text-shadow: 0 0 5px #fff, 0 0 10px #fff; }
