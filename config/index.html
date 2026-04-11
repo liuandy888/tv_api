@@ -215,9 +215,7 @@
   <div class="marquee-inner">欢迎进入 · 常用导航 · 祝您使用愉快</div>
 </div>
 <canvas id="stars"></canvas>
-<div class="wave wave1"></div>
-<div class="wave wave2"></div>
-<div class="wave wave3"></div>
+
 
 <h1 class="title">🔖 我的常用导航</h1>
 
@@ -247,33 +245,14 @@
 
 <script>
   const bgImages = [
-    "https://wp.upx8.com/api.php",
-    "https://picsum.photos/id/1043/1920/1080"
+    "https://picsum.photos/id/1043/1920/1080",
+    "https://wp.upx8.com/api.php"
+    
   ];
   const randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
   document.body.style.backgroundImage = `url(${randomBg})`;
 
 
- 
-  function drawStars() {
-    ctx.clearRect(0,0,w,h);
-    stars.forEach(s => {
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
-      ctx.fillStyle = `rgba(255,255,255,${s.a})`;
-      ctx.fill();
-      s.a += s.va;
-      if (s.a > 1 || s.a < 0.2) s.va *= -1;
-    });
-    requestAnimationFrame(drawStars);
-  }
-  drawStars();
-  window.onresize = () => {
-    w = window.innerWidth;
-    h = window.innerHeight;
-    canvas.width = w;
-    canvas.height = h;
-  };
 function showInfo() {
   let info = '';
   const ua = navigator.userAgent;
