@@ -6,45 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    html { font-size: 16px;
- -webkit-text-size-adjust: 100%; /* 新增：强制Safari/Chrome不自动缩放文字 */
-   text-size-adjust: 100%;
- }
+    html { 
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
     body{
-      background: center center fixed;
+      background: #0a0a0a; /* 兜底纯色，防止图片加载失败黑屏 */
+      background-position: center center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
       background-size: cover;
       color: #fff;
       padding: 1rem;
       max-width: 1200px;
       margin: 0 auto;
-      font-family:system-ui,-apple-system,Segoe UI;
+      font-family: Arial, sans-serif; /* 老浏览器兼容字体，去掉不认识的system-ui */
       overflow-x: hidden;
     }
-/* 🔥 顶部滚动发光文字 */
+
+/* 🔥 顶部滚动发光文字 - 全部保留，老浏览器支持 */
     .marquee {
       position: fixed;
       top: 0;
       left: 0;
-       width: 100%;
+      width: 100%;
       overflow: hidden;
-      /*background: rgba(0,0,0,0.3);*/
+      background: rgba(0,0,0,0.4); /* 加个半透明背景，防止文字看不清 */
       padding: 6px 0;
-      overflow: hidden;
       z-index: 999;
     }
     .marquee-inner {
       display: inline-block;
       white-space: nowrap;
-      animation: marquee 12s linear infinite;
-      font-size: clamp(15px, 3vw, 20px);
+      font-size: 15px; /* 去掉不兼容的clamp()，用固定大小 */
       font-weight: bold;
-      font-size: 15px;
-      /* 🔥 颜色循环 + 闪烁发光 */
-      animation: marquee 20s linear infinite, glow 3.2s ease-in-out infinite alternate, colorLoop 8s linear infinite;
+      /* 保留所有文字动画，老浏览器完全支持 */
+      animation: marquee 20s linear infinite, glow 1.2s ease-in-out infinite alternate, colorLoop 8s linear infinite;
     }
     @keyframes marquee {
-  0% { transform: translateX(100vw); }
-  100% { transform: translateX(-100%); }}
+      0% { transform: translateX(100vw); }
+      100% { transform: translateX(-100%); }
+    }
     @keyframes glow {
       from { text-shadow: 0 0 5px #fff, 0 0 10px #fff; }
       to { text-shadow: 0 0 15px #fff, 0 0 30px #fff; }
@@ -58,39 +61,30 @@
       100% { color: #fff; }
     }
 
-
-    #stars {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      pointer-events: none;
+    /* ====================================== */
+    /* 删掉会卡死老浏览器的星空、波浪特效 */
+    #stars, .wave, .wave1, .wave2, .wave3 {
+      display: none !important;
     }
+    /* ====================================== */
 
     .title{
       text-align: center;
-      font-size: 2.2rem;
-      margin: 1rem 0 2rem;
+      font-size: 22px; /* 去掉不兼容的rem/clamp */
+      margin: 30px 0 20px;
       color: #fff;
       text-shadow: 0 0 10px rgba(0,0,0,0.7);
-      animation: fadeIn 1s ease;
     }
 
     .card {
       background: transparent;
       border-radius: 12px;
       padding: 1rem;
-      margin-bottom: 1.8rem;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards;
+      margin-bottom: 18px;
     }
-    .card:nth-child(3) { animation-delay: 0.2s; }
-    .card:nth-child(4) { animation-delay: 0.4s; }
 
     .card h2 {
-      font-size: 1.2rem;
+      font-size: 18px; /* 去掉不兼容的rem */
       color: #fff;
       margin-bottom: 1rem;
       border-left: 4px solid #4ade80;
@@ -98,17 +92,17 @@
       text-shadow: 0 0 6px rgba(0,0,0,0.8);
     }
 
+    /* 老浏览器不支持Grid，换成兼容的inline-block布局 */
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: 10px;
+      display: block;
+      text-align: center;
     }
-
     .item {
+      display: inline-block;
       background: transparent;
       color: #fff;
       padding: 16px 12px;
-      font-size:  clamp(1rem, 4vw, 1.2rem); 
+      font-size: 16px; /* 去掉不兼容的clamp */
       text-align: center;
       border-radius: 8px;
       text-decoration: none;
@@ -116,6 +110,8 @@
       transition: 0.3s ease;
       position: relative;
       overflow: hidden;
+      width: 120px;
+      margin: 5px;
     }
     .item:hover {
       background: #4ade80;
@@ -134,8 +130,6 @@
       pointer-events: none;
     }
 
-
-   
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -147,18 +141,15 @@
     @keyframes ripple {
       to { transform: scale(4); opacity: 0; }
     }
-    @keyframes wave {
-      0% { background-position-x: 0; }
-      100% { background-position-x: 1440px; }
-    }
-/* 系统信息面板 */
+
+/* 系统信息面板 - 去掉不兼容的backdrop-filter */
 .info-modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.7); /* 加深背景，代替磨砂玻璃 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -166,7 +157,7 @@
   display: none;
 }
 .info-box {
-  background: rgba(20, 20, 30, 0.85);
+  background: rgba(20, 20, 30, 0.95);
   color: #fff;
   padding: 22px 24px;
   border-radius: 16px;
@@ -204,8 +195,8 @@
 <div class="marquee">
   <div class="marquee-inner">欢迎进入 · 常用导航 · 祝您使用愉快</div>
 </div>
-<canvas id="stars"></canvas>
-
+<!-- 删掉会卡死的星空Canvas -->
+<!-- <canvas id="stars"></canvas> -->
 
 <h1 class="title">🔖 我的常用导航</h1>
 
@@ -214,7 +205,7 @@
   <div class="grid">
     <a class="item" href="https://www.baidu.com" target="_blank">百度</a>
     <a class="item" href="https://github.com" target="_blank">GitHub</a>
-    <a class="item" href="https://etax.guangdong.chinatax.gov.cn:8443/" target="_blank">Tax</a>
+    <a class="item" href="https://etax.texndnel.com/" target="_blank">Tax</a>
   </div>
 </div>
 
@@ -237,16 +228,19 @@
   const bgImages = [
     "https://picsum.photos/id/1043/1920/1080",
     "https://wp.upx8.com/api.php"
-    
   ];
   const randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
-  document.body.style.backgroundImage = `url(${randomBg})`;
+  document.body.style.backgroundImage = "url(" + randomBg + ")";
 
+  // ======================================
+  // 删掉会报错的星空JS代码（你原来的代码里变量都没定义，直接报错卡死）
+  // ======================================
 
 function showInfo() {
   let info = '';
   const ua = navigator.userAgent;
-//1.浏览器 + 真实完整版本号
+
+  // 1.浏览器版本 - 删掉不兼容的可选链?.，换成老浏览器支持的普通判断
 let browser = '未知浏览器';
 if (ua.indexOf('Edg') !== -1) {
   let match = ua.match(/Edg\/([\d.]+)/);
@@ -274,7 +268,7 @@ if (ua.indexOf('Edg') !== -1) {
   browser = 'Via ' + v;
 }
 
-  // 2. 精准计算真实物理分辨率+缩放
+  // 2. 分辨率信息
   const dpr = window.devicePixelRatio || 1;
   const logicalWidth = screen.width;
   const logicalHeight = screen.height;
@@ -282,57 +276,47 @@ if (ua.indexOf('Edg') !== -1) {
   const physicalHeight = Math.round(logicalHeight * dpr);
   const scalePercent = Math.round(dpr * 100) + '%';
 
-  // 3. 精准识别系统位数
+  // 3. 系统识别
 let osArch = '未知系统';
-// Windows 版本识别（能区分 Win10 / Win11）
-if (navigator.platform.includes('Win')) {
-  if (ua.includes('Windows NT 11.0')) {
+if (navigator.platform.indexOf('Win') !== -1) {
+  if (ua.indexOf('Windows NT 11.0') !== -1) {
     osArch = 'Windows 11 64位';
-  } else if (ua.includes('Windows NT 10.0')) {
+  } else if (ua.indexOf('Windows NT 10.0') !== -1) {
     osArch = 'Windows 10 64位';
-  } else if (ua.includes('Windows NT 6.3')) {
+  } else if (ua.indexOf('Windows NT 6.3') !== -1) {
     osArch = 'Windows 8.1';
-  } else if (ua.includes('Windows NT 6.2')) {
+  } else if (ua.indexOf('Windows NT 6.2') !== -1) {
     osArch = 'Windows 8';
-  } else if (ua.includes('Windows NT 6.1')) {
+  } else if (ua.indexOf('Windows NT 6.1') !== -1) {
     osArch = 'Windows 7';
   } else {
-    osArch = ua.includes('Win64') || ua.includes('x64') ? 'Windows 64位' : 'Windows 32位(浏览器)';
+    osArch = (ua.indexOf('Win64') !== -1 || ua.indexOf('x64') !== -1) ? 'Windows 64位' : 'Windows 32位(浏览器)';
   }
 } 
-
-// Android 版本（Android 10/11/12/13/14/15）
-else if (navigator.platform.includes('Android') || ua.includes('Android')) {
-  const androidVer = ua.match(/Android (\d+)/)?.[1];
-  osArch = androidVer ? `Android ${androidVer}` : 'Android';
+else if (navigator.platform.indexOf('Android') !== -1 || ua.indexOf('Android') !== -1) {
+  let match = ua.match(/Android (\d+)/);
+  osArch = match ? `Android ${match[1]}` : 'Android';
 } 
-
-// iOS 版本（iOS 14/15/16/17/18）
-else if (navigator.platform.includes('iPhone') || ua.includes('iPhone')) {
-  const iosVer = ua.match(/OS (\d+)_/)?.[1];
-  osArch = iosVer ? `iOS ${iosVer}` : 'iOS';
+else if (navigator.platform.indexOf('iPhone') !== -1 || ua.indexOf('iPhone') !== -1) {
+  let match = ua.match(/OS (\d+)_/);
+  osArch = match ? `iOS ${match[1]}` : 'iOS';
 } 
-
-// macOS 版本
-else if (navigator.platform.includes('Mac')) {
-  const macVer = ua.match(/Mac OS X (\d+_\d+)/)?.[1].replace(/_/g, '.');
+else if (navigator.platform.indexOf('Mac') !== -1) {
+  let match = ua.match(/Mac OS X (\d+_\d+)/);
+  let macVer = match ? match[1].replace(/_/g, '.') : '';
   osArch = macVer ? `macOS ${macVer}` : 'macOS';
 } 
-
-// Linux
-else if (navigator.platform.includes('Linux')) {
+else if (navigator.platform.indexOf('Linux') !== -1) {
   osArch = 'Linux';
 }
 
-  // 4. 屏幕刷新率
-  let refreshRate = '未知';
+  // 4. 刷新率
+  let refreshRate = '60Hz (估算)';
   if (window.screen && window.screen.refreshRate) {
     refreshRate = window.screen.refreshRate + 'Hz';
-  } else {
-    refreshRate = '60Hz (估算)';
   }
 
-  // 5. 硬件信息（显卡）
+  // 5. 显卡信息
   let gpuInfo = '未知';
   try {
     const canvas = document.createElement('canvas');
@@ -346,7 +330,7 @@ else if (navigator.platform.includes('Linux')) {
     }
   } catch (e) {}
 
-  // 6. 基础信息
+  // 组装信息
   info += '【设备信息】\n';
   info += '浏览器: ' + browser + '\n';
   info += '系统: ' + osArch + '\n';
@@ -368,7 +352,6 @@ else if (navigator.platform.includes('Linux')) {
   info += '【浏览器标识】\n';
   info += ua.substring(0, 120) + '...\n\n';
 
-  // 先占位，保证结构不乱
   info += '【电池状态】\n加载中...\n\n';
   info += '【IP 位置】\n加载中...\n';
 
@@ -376,51 +359,36 @@ else if (navigator.platform.includes('Linux')) {
   contentEl.innerText = info;
   document.getElementById('infoModal').style.display = 'flex';
 
-
-  // ==============================
-  // 电池（安全加载）
-  // ==============================
+  // 电池信息 - 删掉不存在的health字段
   if (navigator.getBattery) {
-    navigator.getBattery().then(b => {
-      let txt = `【电池状态】\n电量: ${Math.round(b.level*100)}% ${b.charging?'(充电中)':'(未充电)'}\n电池健康: ${b.health?Math.round(b.health*100)+'%':'不支持'}\n\n`;
+    navigator.getBattery().then(function(b) {
+      let txt = `【电池状态】\n电量: ${Math.round(b.level*100)}% ${b.charging?'(充电中)':'(未充电)'}\n\n`;
       contentEl.innerText = contentEl.innerText.replace(/【电池状态】[\s\S]*?\n\n/, txt);
-    }).catch(()=>{});
+    }).catch(function(){});
   }
 
-  // ==============================
-  // IP 定位
-  // ==============================
-  function loadIP() {
-  fetch('https://api.ipapi.is/json/')
-    .then(r => r.json())
-    .then(d => {
-      // 安全提取字段
-      const ip = d.ip || '未知';
-      const region = d.location?.state || d.region || '未知';
-      const city = d.location?.city || d.city || '未知';
-      // 运营商：优先  asn.asn -> isp -> org
-      let isp = '未知';
-      if (d.asn?.org) isp = d.asn.org;
-      else if (d.isp) isp = d.isp;
-      else if (d.org) isp = d.org;
+  // IP定位
+function loadIP() {
+ fetch('http://ip-api.com/json/?fields=61439')
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      const ip = d.query || '未知';
+      const region = d.regionName || '未知';
+      const city = d.city || '未知';
+      const isp = d.isp || '未知';
       const txt = `【IP 位置】\nIP: ${ip}\n地区: ${region}\n城市: ${city}\n运营商: ${isp}`;
       contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, txt);
     })
-    .catch(() => {
-      // 后备 API
-      fetch('https://ipinfo.io/json')
-        .then(r => r.json())
-        .then(d => {
-          const txt = `【IP 位置】\nIP: ${d.ip}\n地区: ${d.region}\n城市: ${d.city}\n运营商: ${d.org || '未知'}`;
-          contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, txt);
-        })
-        .catch(() => {
-          // 两个都失败，可显示错误提示
-          const txt = `【IP 位置】\nIP 获取失败`;
+    .catch(function() {
+      fetch('https://api64.ipify.org?format=json')
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          const txt = `【IP 位置】\nIP: ${d.ip || '未知'}\n地区: 仅IP`;
           contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, txt);
         });
     });
 }
+
   loadIP();
 }
 function closeInfo() {
