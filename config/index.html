@@ -21,11 +21,11 @@
       padding: 1rem;
       max-width: 1200px;
       margin: 0 auto;
-      font-family: Arial, sans-serif; /* 老浏览器兼容字体，去掉不认识的system-ui */
+      font-family: Arial, sans-serif; /* 老浏览器兼容字体*/
       overflow-x: hidden;
     }
 
-/* 🔥 顶部滚动发光文字 - 全部保留，老浏览器支持 */
+/* 🔥 顶部滚动发光文字  */
     .marquee {
       position: fixed;
       top: 0;
@@ -39,9 +39,9 @@
     .marquee-inner {
       display: inline-block;
       white-space: nowrap;
-      font-size: 15px; /* 去掉不兼容的clamp()，用固定大小 */
+      font-size: 15px; /* 用固定大小 */
       font-weight: bold;
-      /* 保留所有文字动画，老浏览器完全支持 */
+
       animation: marquee 20s linear infinite, glow 1.2s ease-in-out infinite alternate, colorLoop 8s linear infinite;
     }
     @keyframes marquee {
@@ -62,7 +62,7 @@
     }
 
     /* ====================================== */
-    /* 删掉会卡死老浏览器的星空、波浪特效 */
+
     #stars, .wave, .wave1, .wave2, .wave3 {
       display: none !important;
     }
@@ -142,32 +142,31 @@
       to { transform: scale(4); opacity: 0; }
     }
 
-/* 系统信息面板 - 去掉不兼容的backdrop-filter */
+/* 系统信息面板 */
 .info-modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7); /* 加深背景，代替磨砂玻璃 */
-  display: flex;
+  background: rgba(0,0,0,0.7);
+  display: none; /* 只保留这一个 display */
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  display: none;
+  padding: 10px;
+  box-sizing: border-box;
 }
 .info-box {
-  background: rgba(20, 20, 30, 0.95);
-  color: #fff;
-  padding: 22px 24px;
-  border-radius: 16px;
-  width: 90%;
-  max-width: 380px;
-  border: 1px solid rgba(255,255,255,0.15);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-  font-size: 14px;
-  line-height: 1.6;
-  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 95vh; /* 核心：自动限制屏幕高度 */
+  overflow-y: auto; /* 内容多了自动滚动 */
+  padding: 15px 20px;
+  box-sizing: border-box;
+  position: relative; /* 让关闭按钮定位生效 */
 }
 .info-box h3 {
   margin: 0 0 12px;
@@ -183,7 +182,13 @@
   font-size: 18px;
 }
 .info-close:hover {
-  color: #fff;
+  color: #000;
+}
+#infoContent {
+  white-space: pre-wrap; /* 保证换行正常显示 */
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
 }
   </style>
 
@@ -195,7 +200,7 @@
 <div class="marquee">
   <div class="marquee-inner">欢迎进入 · 常用导航 · 祝您使用愉快</div>
 </div>
-<!-- 删掉会卡死的星空Canvas -->
+
 <!-- <canvas id="stars"></canvas> -->
 
 <h1 class="title">🔖 我的常用导航</h1>
@@ -205,7 +210,7 @@
   <div class="grid">
     <a class="item" href="https://www.baidu.com" target="_blank">百度</a>
     <a class="item" href="https://github.com" target="_blank">GitHub</a>
-    <a class="item" href="https://etax.texndnel.com/" target="_blank">Tax</a>
+    <a class="item" href="https://etax.guangdong.chinatax.gov.cn:8443/"target="_blank">Tax</a>
   </div>
 </div>
 
@@ -219,6 +224,7 @@
 <div class="card">
   <h2>🛠️ 工具</h2>
     <div class="grid">
+        <a class="item" href="https://126.com" target="_blank">126mail</a>
       <a class="item" href="https://tools.upx8.com/ip/" target="_blank">iptool</a>
     <a class="item" onclick="showInfo()">系统信息</a>
   </div>
@@ -226,15 +232,14 @@
 
 <script>
   const bgImages = [
-    "https://picsum.photos/id/1043/1920/1080",
-    "https://wp.upx8.com/api.php"
+     "https://wp.upx8.com/api.php",
+    "https://picsum.photos/id/1043/1920/1080"
+    
   ];
   const randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
   document.body.style.backgroundImage = "url(" + randomBg + ")";
 
-  // ======================================
-  // 删掉会报错的星空JS代码（你原来的代码里变量都没定义，直接报错卡死）
-  // ======================================
+
 
 function showInfo() {
   let info = '';
@@ -400,7 +405,7 @@ function closeInfo() {
   <div class="info-box" onclick="event.stopPropagation()">
     <div class="info-close" onclick="closeInfo()">×</div>
     <h3>📟 系统信息</h3>
-    <pre id="infoContent" style="white-space: pre-wrap; margin:0;"></pre>
+   <pre id="infoContent" style="color:#000; white-space: pre-wrap; margin:0;"></pre>
   </div>
 </div>
 </html>
