@@ -374,26 +374,29 @@ else if (navigator.platform.indexOf('Linux') !== -1) {
 
   // IP定位
 function loadIP() {
- fetch('http://ip-api.com/json/?fields=61439')
-    .then(function(r) { return r.json(); })
-    .then(function(d) {
-      const ip = d.query || '未知';
-      const region = d.regionName || '未知';
-      const city = d.city || '未知';
-      const isp = d.isp || '未知';
-      const txt = `【IP 位置】\nIP: ${ip}\n地区: ${region}\n城市: ${city}\n运营商: ${isp}`;
-      contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, txt);
-    })
-    .catch(function() {
-      fetch('https://api64.ipify.org?format=json')
-        .then(function(r){ return r.json(); })
-        .then(function(d){
-          const txt = `【IP 位置】\nIP: ${d.ip || '未知'}\n地区: 仅IP`;
+  // 第一步：获取客户端真实 IP（自动识别 IPv4/IPv6）
+  fetch('https://api64.ipify.org?format=json')
+    .then(r => r.json())
+    .then(ipData => {
+      const clientIP = ipData.ip;
+      // 第二步：用这个 IP 去查询地理位置
+      return fetch(`http://ip-api.com/json/${clientIP}?fields=61439`)
+        .then(r => r.json())
+        .then(locData => {
+          const ip = clientIP;
+          const region = locData.regionName || '未知';
+          const city = locData.city || '未知';
+          const isp = locData.isp || '未知';
+          const txt = `【IP 位置】\nIP: ${ip}\n地区: ${region}\n城市: ${city}\n运营商: ${isp}`;
           contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, txt);
         });
+    })
+    .catch(() => {
+      // 完全失败时的降级
+      const txt = `【IP 位置】\nIP: 获取失败\n地区: 未知`;
+      contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, txt);
     });
 }
-
   loadIP();
 }
 function closeInfo() {
