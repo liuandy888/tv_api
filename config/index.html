@@ -379,12 +379,7 @@ function loadIP() {
 
   Promise.allSettled([
     // 获取 IPv4 + 信息
-    fetch('https://api64.ipify.org?format=json')
-      .then(r => r.json())
-      .then(d => d.ip)
-      .then(ip => fetch(`https://api.ipapi.is/json/?ip=${ip}`))
-      .then(r => r.json()),
-
+   fetch('https://api.ipapi.is/json/').then(r => r.json()),
     // 获取 IPv6 + 信息
     fetch('https://api64.ipify.org?format=json')
       .then(r => r.json())
