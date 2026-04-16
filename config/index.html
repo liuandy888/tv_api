@@ -374,28 +374,59 @@ else if (navigator.platform.indexOf('Linux') !== -1) {
 
   // IP定位
 function loadIP() {
-  // 第一步：获取客户端真实 IP（自动识别 IPv4/IPv6）
-  fetch('https://api64.ipify.org?format=json')
-    .then(r => r.json())
-    .then(ipData => {
-      const clientIP = ipData.ip;
-      // 第二步：用这个 IP 去查询地理位置
-      return fetch(`http://ip-api.com/json/${clientIP}?fields=61439`)
-        .then(r => r.json())
-        .then(locData => {
-          const ip = clientIP;
-          const region = locData.regionName || '未知';
-          const city = locData.city || '未知';
-          const isp = locData.isp || '未知';
-          const txt = `【IP 位置】\nIP: ${ip}\n地区: ${region}\n城市: ${city}\n运营商: ${isp}`;
-          contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, txt);
-        });
-    })
-    .catch(() => {
-      // 完全失败时的降级
-      const txt = `【IP 位置】\nIP: 获取失败\n地区: 未知`;
-      contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, txt);
-    });
+  let result = "【IP 位置】\n加载中...";
+  contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, result);
+
+  Promise.allSettled([
+    // 获取 IPv4 + 信息
+    fetch('https://api64.ipify.org?format=json')
+      .then(r => r.json())
+      .then(d => d.ip)
+      .then(ip => fetch(`https://api.ipapi.is/json/?ip=${ip}`))
+      .then(r => r.json()),
+
+    // 获取 IPv6 + 信息
+    fetch('https://api64.ipify.org?format=json')
+      .then(r => r.json())
+      .then(d => d.ip)
+      .then(ip => fetch(`https://api.ipapi.is/json/?ip=${ip}`))
+      .then(r => r.json())
+
+  ]).then(([res4, res6]) => {
+
+    function fmt(data) {
+      if (data.status !== 'fulfilled' || !data.value) return null;
+      let d = data.value;
+      return {
+        ip: d.ip || '未知',
+        city: d.location?.city || d.city || '未知',
+        region: d.location?.state || d.region || '未知',
+        isp: d.asn?.org || d.isp || d.org || '未知'
+      };
+    }
+
+    let info4 = fmt(res4);
+    let info6 = fmt(res6);
+
+    let txt = '【IP 位置】\n';
+
+    if (info4) {
+      txt += `IPv4: ${info4.ip}\n地区: ${info4.region} ${info4.city}\n运营商: ${info4.isp}\n\n`;
+    } else {
+      txt += 'IPv4: 获取失败\n\n';
+    }
+
+    if (info6) {
+      txt += `IPv6: ${info6.ip}\n地区: ${info6.region} ${info6.city}\n运营商: ${info6.isp}`;
+    } else {
+      txt += 'IPv6: 获取失败';
+    }
+
+    contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, txt);
+
+  }).catch(() => {
+    contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, "【IP 位置】\n获取失败");
+  });
 }
   loadIP();
 }
