@@ -374,54 +374,72 @@ else if (navigator.platform.indexOf('Linux') !== -1) {
 
   // IP定位
 function loadIP() {
-  let result = "【IP 位置】\n加载中...";
-  contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, result);
+  contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, "【IP 位置】\n加载中...");
 
-  Promise.allSettled([
-    // 获取 IPv4 + 信息
-   fetch('https://api.ipapi.is/json/').then(r => r.json()),
-    // 获取 IPv6 + 信息
-    fetch('https://api64.ipify.org?format=json')
-      .then(r => r.json())
-      .then(d => d.ip)
-      .then(ip => fetch(`https://api.ipapi.is/json/?ip=${ip}`))
-      .then(r => r.json())
+  // 同时请求 IPv4 和 IPv6（兼容老浏览器）
+  var count = 0;
+  var res4 = null, res6 = null;
 
-  ]).then(([res4, res6]) => {
+  function done() {
+    if (count !== 2) return;
 
     function fmt(data) {
-      if (data.status !== 'fulfilled' || !data.value) return null;
-      let d = data.value;
+      if (!data) return null;
       return {
-        ip: d.ip || '未知',
-        city: d.location?.city || d.city || '未知',
-        region: d.location?.state || d.region || '未知',
-        isp: d.asn?.org || d.isp || d.org || '未知'
+        ip: data.ip || '未知',
+        city: (data.location && data.location.city) || data.city || '未知',
+        region: (data.location && data.location.state) || data.region || '未知',
+        isp: (data.asn && data.asn.org) || data.isp || data.org || '未知'
       };
     }
 
-    let info4 = fmt(res4);
-    let info6 = fmt(res6);
-
-    let txt = '【IP 位置】\n';
+    var info4 = fmt(res4);
+    var info6 = fmt(res6);
+    var txt = '【IP 位置】\n';
 
     if (info4) {
-      txt += `IPv4: ${info4.ip}\n地区: ${info4.region} ${info4.city}\n运营商: ${info4.isp}\n\n`;
+      txt += 'IPv4: ' + info4.ip + '\n地区: ' + info4.region + ' ' + info4.city + '\n运营商: ' + info4.isp + '\n\n';
     } else {
       txt += 'IPv4: 获取失败\n\n';
     }
 
     if (info6) {
-      txt += `IPv6: ${info6.ip}\n地区: ${info6.region} ${info6.city}\n运营商: ${info6.isp}`;
+      txt += 'IPv6: ' + info6.ip + '\n地区: ' + info6.region + ' ' + info6.city + '\n运营商: ' + info6.isp;
     } else {
       txt += 'IPv6: 获取失败';
     }
 
     contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, txt);
+  }
 
-  }).catch(() => {
-    contentEl.innerText = contentEl.innerText.replace(/【IP 位置】[\s\S]*$/, "【IP 位置】\n获取失败");
-  });
+  // ====== IPv4 ======
+  fetch('https://api.ipapi.is/json/')
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      res4 = d;
+    })
+    .catch(function() {})
+    .then(function() {
+      count++;
+      done();
+    });
+
+  // ====== IPv6 ======
+  fetch('https://api64.ipify.org?format=json')
+    .then(function(r) { return r.json(); })
+    .then(function(d) { return d.ip; })
+    .then(function(ip) {
+      return fetch('https://api.ipapi.is/json/?ip=' + ip);
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      res6 = d;
+    })
+    .catch(function() {})
+    .then(function() {
+      count++;
+      done();
+    });
 }
   loadIP();
 }
