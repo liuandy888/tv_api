@@ -1343,7 +1343,7 @@
         {
             "name": "cmcc",
             "type": 0,
-            "url": "http://127.0.0.1:9978/proxy?do=live&url=http://103.40.14.12:2026/zjyx.txt",
+            "url": "http://127.0.0.1:9978/proxy?do=live&url=http://dreamtv.sylu.net:2082/m3u8view?token=VdPnaqq6F3q-LlVxIU1kAl85DpEi_1NTSDebXrugHtHxUqoSHglWg_2LjvAQLR9L",
             "playerType": 2,
             "timeout": 10,
             "ua": "okHttp/Mod-1.5.0.0"
