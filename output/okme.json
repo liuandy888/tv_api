@@ -645,14 +645,14 @@
         {
             "name": "MIGU_2k",
             "type": 0,
-            "url": "http://127.0.0.1:9978/proxy?do=live&url=http://43.251.226.110:9991/oxt4lc",
+            "url": "http://43.251.226.110:9991/oxt4lc",
             "playerType": 2,
             "timeout": 10
         },
         {
             "name": "MIGU",
             "type": 0,
-            "url": "http://127.0.0.1:9978/proxy?do=live&url=https://taoiptv.com/lives/44015.txt?token=31fddc2e20ea02ba",
+            "url": "https://taoiptv.com/lives/44015.txt?token=31fddc2e20ea02ba",
             "playerType": 2,
             "timeout": 10
         },
