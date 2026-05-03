@@ -1,5 +1,5 @@
 #EXTM3U x-tvg-url="https://raw.githubusercontent.com/liuandy888/itv/refs/heads/master/output/epg/epg.gz"
-#EXTINF:-1 tvg-id="1" tvg-name="CCTV-1" tvg-logo="http://10.1.0.191:5180/logo/CCTV-1.png" group-title="🕘️更新时间",2026-05-02 13:41:42
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV-1" tvg-logo="http://10.1.0.191:5180/logo/CCTV-1.png" group-title="🕘️更新时间",2026-05-03 14:08:44
 http://103.40.14.12:2026/ysp.php?pid=600001859&id=2024078201
 #EXTINF:-1 tvg-id="1" tvg-name="CCTV-1" tvg-logo="http://10.1.0.191:5180/logo/CCTV-1.png" group-title="📺央视频道",CCTV-1
 http://103.40.14.12:2026/ysp.php?pid=600001859&id=2024078201
@@ -206,9 +206,9 @@ http://120.198.86.186:9901/tsfile/live/1059_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-id="23" tvg-name="浙江卫视" tvg-logo="http://10.1.0.191:5180/logo/浙江卫视.png" group-title="📡卫视频道",浙江卫视
 http://120.233.73.4:19901/tsfile/live/1008_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-id="24" tvg-name="湖南卫视" tvg-logo="http://10.1.0.191:5180/logo/湖南卫视.png" group-title="📡卫视频道",湖南卫视
-http://58.46.201.145:9901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-id="24" tvg-name="湖南卫视" tvg-logo="http://10.1.0.191:5180/logo/湖南卫视.png" group-title="📡卫视频道",湖南卫视
 http://175.10.19.5:9999/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-id="24" tvg-name="湖南卫视" tvg-logo="http://10.1.0.191:5180/logo/湖南卫视.png" group-title="📡卫视频道",湖南卫视
+http://58.46.201.145:9901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="24" tvg-name="湖南卫视" tvg-logo="http://10.1.0.191:5180/logo/湖南卫视.png" group-title="📡卫视频道",湖南卫视
 http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hunws
 #EXTINF:-1 tvg-id="24" tvg-name="湖南卫视" tvg-logo="http://10.1.0.191:5180/logo/湖南卫视.png" group-title="📡卫视频道",湖南卫视
@@ -450,9 +450,9 @@ http://107.150.60.122/live/nfws.m3u8
 #EXTINF:-1 tvg-id="61" tvg-name="广州综合" tvg-logo="http://10.1.0.191:5180/logo/广州综合.png" group-title="☘️广东频道",广州综合
 http://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=f0147ae6453a80f5989f382368b72aad&txTime=18d00acf487
 #EXTINF:-1 tvg-id="61" tvg-name="广州综合" tvg-logo="http://10.1.0.191:5180/logo/广州综合.png" group-title="☘️广东频道",广州综合
-http://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=c8dbe86d6f86eb1a21999ab479fd5667&txTime=18d3c4690e8
-#EXTINF:-1 tvg-id="61" tvg-name="广州综合" tvg-logo="http://10.1.0.191:5180/logo/广州综合.png" group-title="☘️广东频道",广州综合
 http://tencentplaygzrb01.gztv.com/live/zonghes.m3u8
+#EXTINF:-1 tvg-id="61" tvg-name="广州综合" tvg-logo="http://10.1.0.191:5180/logo/广州综合.png" group-title="☘️广东频道",广州综合
+http://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=c8dbe86d6f86eb1a21999ab479fd5667&txTime=18d3c4690e8
 #EXTINF:-1 tvg-id="62" tvg-name="广州新闻" tvg-logo="http://10.1.0.191:5180/logo/广州新闻.png" group-title="☘️广东频道",广州新闻
 http://tencentplaygzrb01.gztv.com/live/xinwen.m3u8
 #EXTINF:-1 tvg-id="49" tvg-name="深圳卫视" tvg-logo="http://10.1.0.191:5180/logo/深圳卫视.png" group-title="☘️广东频道",深圳卫视
@@ -470,57 +470,57 @@ http://58.46.201.145:9901/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="63" tvg-name="湖南都市" tvg-logo="http://10.1.0.191:5180/logo/湖南都市.png" group-title="☘️湖南频道",湖南都市
 http://hunhhyd.sohu.blog:9999/tsfile/live/1011_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-id="64" tvg-name="湖南经视" tvg-logo="http://10.1.0.191:5180/logo/湖南经视.png" group-title="☘️湖南频道",湖南经视
-http://58.46.201.145:9901/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-id="64" tvg-name="湖南经视" tvg-logo="http://10.1.0.191:5180/logo/湖南经视.png" group-title="☘️湖南频道",湖南经视
 http://175.10.19.5:9999/tsfile/live/1058_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-id="64" tvg-name="湖南经视" tvg-logo="http://10.1.0.191:5180/logo/湖南经视.png" group-title="☘️湖南频道",湖南经视
+http://58.46.201.145:9901/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="64" tvg-name="湖南经视" tvg-logo="http://10.1.0.191:5180/logo/湖南经视.png" group-title="☘️湖南频道",湖南经视
 http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hunjs
 #EXTINF:-1 tvg-id="64" tvg-name="湖南经视" tvg-logo="http://10.1.0.191:5180/logo/湖南经视.png" group-title="☘️湖南频道",湖南经视
 http://hunhhyd.sohu.blog:9999/tsfile/live/1010_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-id="65" tvg-name="湖南电视剧" tvg-logo="http://10.1.0.191:5180/logo/湖南电视剧.png" group-title="☘️湖南频道",湖南电视剧
-http://175.10.19.5:9999/tsfile/live/1120_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-id="65" tvg-name="湖南电视剧" tvg-logo="http://10.1.0.191:5180/logo/湖南电视剧.png" group-title="☘️湖南频道",湖南电视剧
 http://58.46.201.145:9901/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-id="65" tvg-name="湖南电视剧" tvg-logo="http://10.1.0.191:5180/logo/湖南电视剧.png" group-title="☘️湖南频道",湖南电视剧
+http://175.10.19.5:9999/tsfile/live/1120_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="65" tvg-name="湖南电视剧" tvg-logo="http://10.1.0.191:5180/logo/湖南电视剧.png" group-title="☘️湖南频道",湖南电视剧
 http://hunhhyd.sohu.blog:9999/tsfile/live/1013_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-id="66" tvg-name="湖南电影" tvg-logo="http://10.1.0.191:5180/logo/湖南电影.png" group-title="☘️湖南频道",湖南电影
 http://113.241.133.223:85/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-id="66" tvg-name="湖南电影" tvg-logo="http://10.1.0.191:5180/logo/湖南电影.png" group-title="☘️湖南频道",湖南电影
+http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hndy
 #EXTINF:-1 tvg-id="66" tvg-name="湖南电影" tvg-logo="http://10.1.0.191:5180/logo/湖南电影.png" group-title="☘️湖南频道",湖南电影
 http://58.46.201.145:9901/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="66" tvg-name="湖南电影" tvg-logo="http://10.1.0.191:5180/logo/湖南电影.png" group-title="☘️湖南频道",湖南电影
 http://58.46.28.205:9999/tsfile/live/1093_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="66" tvg-name="湖南电影" tvg-logo="http://10.1.0.191:5180/logo/湖南电影.png" group-title="☘️湖南频道",湖南电影
 http://175.10.19.5:9999/tsfile/live/1104_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-id="66" tvg-name="湖南电影" tvg-logo="http://10.1.0.191:5180/logo/湖南电影.png" group-title="☘️湖南频道",湖南电影
-http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hndy
 #EXTINF:-1 tvg-id="67" tvg-name="湖南爱晚" tvg-logo="http://10.1.0.191:5180/logo/湖南爱晚.png" group-title="☘️湖南频道",湖南爱晚
 http://58.46.28.205:9999/tsfile/live/1097_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="67" tvg-name="湖南爱晚" tvg-logo="http://10.1.0.191:5180/logo/湖南爱晚.png" group-title="☘️湖南频道",湖南爱晚
 http://hunhhyd.sohu.blog:9999/tsfile/live/1014_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-id="68" tvg-name="湖南教育" tvg-logo="http://10.1.0.191:5180/logo/湖南教育.png" group-title="☘️湖南频道",湖南教育
-http://58.46.201.145:9901/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-id="68" tvg-name="湖南教育" tvg-logo="http://10.1.0.191:5180/logo/湖南教育.png" group-title="☘️湖南频道",湖南教育
 http://110.53.235.13:10085/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-id="68" tvg-name="湖南教育" tvg-logo="http://10.1.0.191:5180/logo/湖南教育.png" group-title="☘️湖南频道",湖南教育
+http://58.46.201.145:9901/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="68" tvg-name="湖南教育" tvg-logo="http://10.1.0.191:5180/logo/湖南教育.png" group-title="☘️湖南频道",湖南教育
 http://107.150.60.122/live/hnjy.m3u8
 #EXTINF:-1 tvg-id="68" tvg-name="湖南教育" tvg-logo="http://10.1.0.191:5180/logo/湖南教育.png" group-title="☘️湖南频道",湖南教育
 http://hunhhyd.sohu.blog:9999/tsfile/live/1015_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-id="69" tvg-name="湖南娱乐" tvg-logo="http://10.1.0.191:5180/logo/湖南娱乐.png" group-title="☘️湖南频道",湖南娱乐
-http://58.46.201.145:9901/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-id="69" tvg-name="湖南娱乐" tvg-logo="http://10.1.0.191:5180/logo/湖南娱乐.png" group-title="☘️湖南频道",湖南娱乐
 http://113.241.133.223:85/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="69" tvg-name="湖南娱乐" tvg-logo="http://10.1.0.191:5180/logo/湖南娱乐.png" group-title="☘️湖南频道",湖南娱乐
-http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hunyl
+http://175.10.19.5:9999/tsfile/live/1101_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="69" tvg-name="湖南娱乐" tvg-logo="http://10.1.0.191:5180/logo/湖南娱乐.png" group-title="☘️湖南频道",湖南娱乐
 http://58.46.28.205:9999/tsfile/live/1096_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="69" tvg-name="湖南娱乐" tvg-logo="http://10.1.0.191:5180/logo/湖南娱乐.png" group-title="☘️湖南频道",湖南娱乐
-http://175.10.19.5:9999/tsfile/live/1101_1.m3u8?key=txiptv&playlive=1&authid=0
+http://58.46.201.145:9901/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-id="69" tvg-name="湖南娱乐" tvg-logo="http://10.1.0.191:5180/logo/湖南娱乐.png" group-title="☘️湖南频道",湖南娱乐
+http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hunyl
+#EXTINF:-1 tvg-id="70" tvg-name="湖南国际" tvg-logo="http://10.1.0.191:5180/logo/湖南国际.png" group-title="☘️湖南频道",湖南国际
+http://113.241.133.223:85/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="70" tvg-name="湖南国际" tvg-logo="http://10.1.0.191:5180/logo/湖南国际.png" group-title="☘️湖南频道",湖南国际
 http://175.10.19.5:9999/tsfile/live/1134_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="70" tvg-name="湖南国际" tvg-logo="http://10.1.0.191:5180/logo/湖南国际.png" group-title="☘️湖南频道",湖南国际
 http://58.46.201.145:9901/tsfile/live/0011_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-id="70" tvg-name="湖南国际" tvg-logo="http://10.1.0.191:5180/logo/湖南国际.png" group-title="☘️湖南频道",湖南国际
-http://113.241.133.223:85/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="71" tvg-name="湖南公共" tvg-logo="http://10.1.0.191:5180/logo/湖南公共.png" group-title="☘️湖南频道",湖南公共
 http://58.46.201.145:9901/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="71" tvg-name="湖南公共" tvg-logo="http://10.1.0.191:5180/logo/湖南公共.png" group-title="☘️湖南频道",湖南公共
@@ -528,13 +528,13 @@ http://113.241.133.223:85/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="71" tvg-name="湖南公共" tvg-logo="http://10.1.0.191:5180/logo/湖南公共.png" group-title="☘️湖南频道",湖南公共
 http://175.10.19.5:9999/tsfile/live/1055_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="72" tvg-name="金鹰纪实" tvg-logo="http://10.1.0.191:5180/logo/金鹰纪实.png" group-title="☘️湖南频道",金鹰纪实
+http://120.198.86.186:9901/tsfile/live/1078_1.m3u8?key=txiptv
+#EXTINF:-1 tvg-id="72" tvg-name="金鹰纪实" tvg-logo="http://10.1.0.191:5180/logo/金鹰纪实.png" group-title="☘️湖南频道",金鹰纪实
 http://175.10.19.5:9999/tsfile/live/1035_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="72" tvg-name="金鹰纪实" tvg-logo="http://10.1.0.191:5180/logo/金鹰纪实.png" group-title="☘️湖南频道",金鹰纪实
-http://58.46.28.205:9999/tsfile/live/1095_1.m3u8?key=txiptv&playlive=1&authid=0
+http://113.241.133.223:85/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="72" tvg-name="金鹰纪实" tvg-logo="http://10.1.0.191:5180/logo/金鹰纪实.png" group-title="☘️湖南频道",金鹰纪实
-http://42.48.45.143:808/hls/25/index.m3u8
-#EXTINF:-1 tvg-id="72" tvg-name="金鹰纪实" tvg-logo="http://10.1.0.191:5180/logo/金鹰纪实.png" group-title="☘️湖南频道",金鹰纪实
-http://120.198.86.186:9901/tsfile/live/1078_1.m3u8?key=txiptv
+http://58.46.201.145:9901/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-id="72" tvg-name="金鹰纪实" tvg-logo="http://10.1.0.191:5180/logo/金鹰纪实.png" group-title="☘️湖南频道",金鹰纪实
 http://120.238.84.45:9901/tsfile/live/1059_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-id="73" tvg-name="长沙新闻" tvg-logo="http://10.1.0.191:5180/logo/长沙新闻.png" group-title="☘️湖南频道",长沙新闻
@@ -550,11 +550,11 @@ http://hunhhyd.sohu.blog:9999/tsfile/live/1094_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-id="78" tvg-name="益阳公共" tvg-logo="http://10.1.0.191:5180/logo/益阳公共.png" group-title="☘️湖南频道",益阳公共
 http://hunhhyd.sohu.blog:9999/tsfile/live/1132_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-id="79" tvg-name="翡翠台" tvg-logo="http://10.1.0.191:5180/logo/翡翠台.png" group-title="🌊港·澳·台",翡翠台
-http://dbm.cc.cd:20002/smt3.2.1.php?id=jade_xue
+http://dbm.cc.cd:20002/smt3.2.1.php?id=jade_twn
 #EXTINF:-1 tvg-id="79" tvg-name="翡翠台" tvg-logo="http://10.1.0.191:5180/logo/翡翠台.png" group-title="🌊港·澳·台",翡翠台
 http://o11.163189.xyz/stream/tvb/fct/
 #EXTINF:-1 tvg-id="79" tvg-name="翡翠台" tvg-logo="http://10.1.0.191:5180/logo/翡翠台.png" group-title="🌊港·澳·台",翡翠台
-http://dbm.cc.cd:20002/smt3.2.1.php?id=jade_twn
+http://dbm.cc.cd:20002/smt3.2.1.php?id=jade_xue
 #EXTINF:-1 tvg-id="79" tvg-name="翡翠台" tvg-logo="http://10.1.0.191:5180/logo/翡翠台.png" group-title="🌊港·澳·台",翡翠台
 http://dbm.de5.net:20003/163189/fct
 #EXTINF:-1 tvg-id="79" tvg-name="翡翠台" tvg-logo="http://10.1.0.191:5180/logo/翡翠台.png" group-title="🌊港·澳·台",翡翠台
@@ -580,9 +580,9 @@ http://dbm.de5.net:20003/163189/fhzx
 #EXTINF:-1 tvg-id="82" tvg-name="凤凰资讯" tvg-logo="http://10.1.0.191:5180/logo/凤凰资讯.png" group-title="🌊港·澳·台",凤凰资讯
 http://mytvsuper.webn.cc:2052/live/stream-fd085ac9-4ed0-47c7-bc3d-6749fc02b5ae/index.m3u8?u=admin&p=e7f0536a468814333829a76ce592655eca9fb8c149ccbd49bcfd99163050c1f9
 #EXTINF:-1 tvg-id="83" tvg-name="凤凰香港" tvg-logo="http://10.1.0.191:5180/logo/凤凰香港.png" group-title="🌊港·澳·台",凤凰香港
-http://r.jdshipin.com/NfC0f
-#EXTINF:-1 tvg-id="83" tvg-name="凤凰香港" tvg-logo="http://10.1.0.191:5180/logo/凤凰香港.png" group-title="🌊港·澳·台",凤凰香港
 http://r.jdshipin.com/yDoTN
+#EXTINF:-1 tvg-id="83" tvg-name="凤凰香港" tvg-logo="http://10.1.0.191:5180/logo/凤凰香港.png" group-title="🌊港·澳·台",凤凰香港
+http://r.jdshipin.com/NfC0f
 #EXTINF:-1 tvg-id="83" tvg-name="凤凰香港" tvg-logo="http://10.1.0.191:5180/logo/凤凰香港.png" group-title="🌊港·澳·台",凤凰香港
 http://dbm.de5.net:20003/163189/fhhk
 #EXTINF:-1 tvg-id="84" tvg-name="凤凰卫视" tvg-logo="http://10.1.0.191:5180/logo/凤凰卫视.png" group-title="🌊港·澳·台",凤凰卫视
@@ -626,9 +626,9 @@ https://isus.cc/php/huya.php?id=11352879
 #EXTINF:-1 tvg-id="97" tvg-name="蜡笔小新" tvg-logo="http://10.1.0.191:5180/logo/蜡笔小新.png" group-title="🪁动画频道",蜡笔小新
 https://live.ottiptv.cc/huya/11352970
 #EXTINF:-1 tvg-id="98" tvg-name="爱情公寓" tvg-logo="http://10.1.0.191:5180/logo/爱情公寓.png" group-title="🏛经典剧场",爱情公寓
-http://74.91.26.218:82/live/vlaqgy.m3u8
-#EXTINF:-1 tvg-id="98" tvg-name="爱情公寓" tvg-logo="http://10.1.0.191:5180/logo/爱情公寓.png" group-title="🏛经典剧场",爱情公寓
 https://live.ottiptv.cc/huya/11336726
+#EXTINF:-1 tvg-id="98" tvg-name="爱情公寓" tvg-logo="http://10.1.0.191:5180/logo/爱情公寓.png" group-title="🏛经典剧场",爱情公寓
+http://74.91.26.218:82/live/vlaqgy.m3u8
 #EXTINF:-1 tvg-id="99" tvg-name="陈翔六点半" tvg-logo="http://10.1.0.191:5180/logo/陈翔六点半.png" group-title="🏛经典剧场",陈翔六点半
 https://isus.cc/php/huya.php?id=11274154
 #EXTINF:-1 tvg-id="100" tvg-name="三国演义" tvg-logo="http://10.1.0.191:5180/logo/三国演义.png" group-title="🏛经典剧场",三国演义
