@@ -644,7 +644,7 @@
     "lives": [
         {
             "name": "MIGU_2k",
-            "type": 0,
+            "type": 1,
             "url": "http://43.251.226.110:9991/oxt4lc",
             "playerType": 2,
             "timeout": 10
