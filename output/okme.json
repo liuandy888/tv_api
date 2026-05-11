@@ -1,12 +1,12 @@
 {
-    "spider": ”./8c3c5.jpg",
-    "wallpaper": "http://127.0.0.1:9978/proxy?do=wall",
+    "spider": "./8c3c5.jpg
+    "wallpaper": "https://深色壁纸.xxooo.cf/",
     "logo": "./log7.gif",
  "notice": "！！！欢迎使用！！！",
   "notice_speed": 1,
     "sites": [
 
-        {
+           {
             "key": "豆瓣",
             "name": "🤓公众号┃学习在线",
             "type": 3,
@@ -15,7 +15,6 @@
             "changeable": 1,
             "ext": {
                 "sp": "Douban"
-
             }
         },
         {
@@ -33,6 +32,20 @@
             "ext": {
                 "sp": "Config"
             }
+        },
+  {
+            "key": "藤藤",
+            "name": "腾讯别天神",
+            "type": 3,
+            "api": "https://wget.la/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/drpy2.min.js",
+            "ext": "https://gitee.com/cpu-iy/iy/raw/master/lib/%E8%97%A4%E8%97%A4.png"
+        },
+        {
+            "key": "茫了",
+            "name": "芒果别天神",
+            "type": 3,
+            "api": "https://wget.la/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/drpy2.min.js",
+            "ext": "https://gitee.com/cpu-iy/iy/raw/master/lib/%E8%8C%AB%E8%8C%AB.png"
         },
         {
             "key": "本地播放",
@@ -1336,20 +1349,27 @@
         {
             "name": "MIGU（1080）",
             "type": 0,
+            "url": "http://156.238.248.80:8880/live.txt",
+            "playerType": 2,
+            "timeout": 10
+        },
+        {
+            "name": "MIGU_2k",
+            "type": 0,
             "url": "http://43.251.226.110:9991/oxt4lc",
             "playerType": 2,
             "timeout": 10
         },
         {
-            "name": "cmcc",
+            "name": "MIGU",
             "type": 0,
-            "url": "http://127.0.0.1:9978/proxy?do=live&url=http://dreamtv.sylu.net:2082/m3u8view?token=VdPnaqq6F3q-LlVxIU1kAl85DpEi_1NTSDebXrugHtHxUqoSHglWg_2LjvAQLR9L",
+            "url": "https://taoiptv.com/lives/44015.txt?token=31fddc2e20ea02ba",
             "playerType": 2,
-            "timeout": 10,
-            "ua": "okHttp/Mod-1.5.0.0"
+            "timeout": 10
         },
         {
             "name": "see",
+            "type": 0,
             "url": "./list.txt",
             "playerType": 2,
             "epg": "http://epg.52sw.top:668/?ch={name}&date={date},https://tv.mxdyeah.top/epgphp/t.xml.gz",
