@@ -1355,7 +1355,7 @@
             "timeout": 10
         },
         {
-            "name": "MIGU",
+            "name": "iptv",
             "type": 0,
             "url": "https://taoiptv.com/lives/44015.txt?token=31fddc2e20ea02ba",
             "playerType": 2,
