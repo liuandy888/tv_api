@@ -1349,7 +1349,7 @@
    
         {
             "name": "MIGU",
-            "type": 0,
+            "type": 1,
             "url": "http://43.251.226.110:9991/oxt4lc",
             "playerType": 2,
             "timeout": 10
@@ -1357,7 +1357,7 @@
         {
             "name": "iptv",
             "type": 0,
-            "url": "https://taoiptv.com/lives/44015.txt?token=31fddc2e20ea02ba",
+            "url": "https://taoiptv.com/lives/44015.txt?token=6f58974e42b420a8",
             "playerType": 2,
             "timeout": 10
         },
