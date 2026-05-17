@@ -3,7 +3,7 @@
 "wallpaper":"https://深色壁纸.xxooo.cf/",
 
 "sites":[
-{"key":"点我切源","name":"新增嘟嘟盘，到【太太太硬了】领免费容量","type": 3, "api": "csp_DouDouGuard","indexs":1,"searchable": 0,"quickSearch": 0,"changeable":0}, {            "key": "藤藤",            "name": "腾讯",             "type": 3,            "api": "./lib/drpy2.min.js",            "ext": "./lib/aiqiyi.js"        },{      "key": "电影天堂",      "name": "电影天堂",      "type": 1,      "api": "http://caiji.dyttzyapi.com/api.php/provide/vod/?ac=list",      "searchable": 1,      "quickSearch": 1    },
+{"key":"点我切源","name":"新增嘟嘟盘，到【太太太硬了】领免费容量","type": 3, "api": "csp_DouDouGuard","indexs":1,"searchable": 0,"quickSearch": 0,"changeable":0}, {            "key": "琦琦",            "name": "❤️奇异",             "type": 3,            "api": "./lib/drpy2.min.js",            "ext": "./lib/aiqiyi.js"        },{            "key": "藤藤",            "name": "腾讯别天神",             "type": 3,            "api": "./lib/drpy2.min.js",            "ext": "./lib/tengxun2.js"        }, {            "key": "茫果",            "name": "茫茫",             "type": 3,            "api": "./lib/drpy2.min.js",            "ext": "./lib/mangmang.png"        },{      "key": "电影天堂",      "name": "电影天堂",      "type": 1,      "api": "http://caiji.dyttzyapi.com/api.php/provide/vod/?ac=list",      "searchable": 1,      "quickSearch": 1    },
 {"key":"MDrive","name":"🗂我的云盘┃我配置","type":3,"api":"csp_MyDriveGuard","changeable":0,"indexs":0,"searchable":1,"style":{"type":"oval"},"ext":{"Cloud-drive":"tvfan/Cloud-drive.txt"}},
 {"key":"玩偶","name":"👽玩偶哥哥┃4K弹幕","type":3,"api":"csp_WoGGGuard","timeout":30,"searchable":1,"quickSearch":1,"changeable":0, "ext": {"Cloud-drive":"tvfan/Cloud-drive.txt"}},
 {"key":"YGP","name":"🚀叨观荐影┃预告片","type":3,"api":"csp_YGPGuard","searchable":0,"quickSearch":0,"changeable":0},
@@ -60,7 +60,7 @@
 ],
 "rules": [{"name":"cdn.ryplay","hosts":["cdn.ryplay"],"regex":["5.480000","#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:5.480000,[\\s\\S]*?#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\s*\\r?\\n#EXTINF:5.320000,\\s*\\r?\\n.+\\.ts\\s*\\r?\\n(?:#EXTINF:[\\d.]+,\\s*\\r?\\n.+\\.ts\\s*\\r?\\n)*?#EXTINF:3.360000,\\s*\\r?\\n.+\\.ts\\s*\\r?\\n#EXT-X-DISCONTINUITY","#EXT-X-DISCONTINUITY\\s*\\r?\\n#EXTINF:4.000000,\\s*\\r?\\n.+\\.ts\\s*\\r?\\n(?:#EXTINF:[\\d.]+,\\s*\\r?\\n.+\\.ts\\s*\\r?\\n)*?#EXTINF:0.560000,\\s*\\r?\\n.+\\.ts\\s*\\r?\\n#EXT-X-DISCONTINUITY","#EXTINF.*?\\s+.*?1o.*?\\.ts\\s+"]}],
 "logo":"https://bdcache1-f1.v3mh.com/image/25-12-16/6941612717007.gif",
-"hosts":["img1.wsyzy.org=danmu.888484.xyz","fiizvfck.top=danmu.888484.xyz"],
+"hosts":["img1.wsyzy.org=danmu.888484.xyz","fiizvfck.top=danmu.888484.xyz"], "parses": [    {      "name": "芒果4K",      "url": "http://mg.itufm.top/mg.php?url=",      "type": 1,      "ext": {        "flag": [          "mgtv",          "芒果"        ]      }    },    {      "name": "腾讯4K",      "url": "http://101.201.171.207:9898/home/api?type=ys&uid=17303&key=gilpqrwzDGHLMPZ018&url=",      "type": 1,      "ext": {        "flag": [          "qq",          "腾讯"        ]      }    }  ],
 "lives":[
 {"name":"develop202","type":0,"url":"https://gh.927223.xyz/https://raw.githubusercontent.com/develop202/migu_video/refs/heads/main/interface.txt","playerType":2,"epg":"http://diyp5.112114.xyz/?ch={name}&date={date}","logo": "https://epg.112114.xyz/logo/{name}.png"},
 {"name":"Kimentanm","type":0,"url":"https://gh.927223.xyz/https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u","playerType":2},
