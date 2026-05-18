@@ -1349,8 +1349,8 @@
    
         {
             "name": "MIGU",
-            "type": 1,
-            "url": "http://43.251.226.110:9991/oxt4lc",
+            "type": 0,
+            "url": "https://ds65.tv1288.xyz",
             "playerType": 2,
             "timeout": 10
         },
