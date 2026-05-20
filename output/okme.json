@@ -745,6 +745,21 @@
           "腾讯"
         ]
       }
+    },
+ {
+      "name": "蓝天白云",
+      "url": "https://fzl4k.xyz/jx.php?url=",
+      "type": 1,
+      "ext": {
+        "flag": [
+          "qq",
+          "腾讯",
+          "aiqiyi",
+          "爱奇艺",
+          "youku",
+          "优酷"
+        ]
+      }
     }
   ],
     "lives": [
