@@ -679,7 +679,7 @@
         ]
       }
     },
-    {
+   {
             "name": "🦐虾米🍚",
             "url": "https://jx.xmflv.cc/?url=",
             "type": 0,
@@ -706,8 +706,12 @@
                     "fun",
                     "风行"
                 ]
-       },
-       {
+            },
+            "header": {
+                "User-Agent": "Mozilla/5.0"
+            }
+        },
+        {
             "name": "ikun",
             "type": 0,
             "url": "https://jx.hls.one/?url="
