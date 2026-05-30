@@ -1,5 +1,5 @@
 🕘️更新时间,#genre#
-2026-05-29 18:09:44,http://43.248.187.60:2026/ysp.php?pid=600001859&id=2024078201
+2026-05-30 14:27:55,http://43.248.187.60:2026/ysp.php?pid=600001859&id=2024078201
 
 📺央视频道,#genre#
 CCTV-1,http://43.248.187.60:2026/ysp.php?pid=600001859&id=2024078201
@@ -165,9 +165,9 @@ CCTV-17,http://api.mgsp.eu.cc/673168256
 番禺电视,http://video.epaper.pybtv.cn:8080/live/rtmp_live_demo.flv
 番禺电视台,http://video.epaper.pybtv.cn:8080/live/rtmp_live_demo.flv
 大湾区卫视,http://api.mgsp.eu.cc/608917627
-广州综合,http://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=c8dbe86d6f86eb1a21999ab479fd5667&txTime=18d3c4690e8
-广州综合,http://tencentplaygzrb01.gztv.com/live/zonghes.m3u8
 广州综合,http://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=f0147ae6453a80f5989f382368b72aad&txTime=18d00acf487
+广州综合,http://tencentplaygzrb01.gztv.com/live/zonghes.m3u8
+广州综合,http://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=c8dbe86d6f86eb1a21999ab479fd5667&txTime=18d3c4690e8
 广州新闻,http://tencentplaygzrb01.gztv.com/live/xinwen.m3u8
 深圳卫视,http://43.248.187.60:2026/ysp.php?pid=600002481&id=2024061303
 深圳卫视,http://207.56.13.146:81/cdnlive/szws.m3u8
@@ -220,8 +220,8 @@ CHC影迷电影,http://api.mgsp.eu.cc/952383261
 蜡笔小新,https://live.ottiptv.cc/huya/11352970
 
 🏛经典剧场,#genre#
-爱情公寓,https://live.ottiptv.cc/huya/11336726
 爱情公寓,http://74.91.26.218:82/live/vlaqgy.m3u8
+爱情公寓,https://live.ottiptv.cc/huya/11336726
 陈翔六点半,https://isus.cc/php/huya.php?id=11274154
 三国演义,https://live.ottiptv.cc/huya/11352944
 水浒传,https://live.ottiptv.cc/huya/26355860
