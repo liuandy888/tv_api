@@ -1,5 +1,5 @@
 🕘️更新时间,#genre#
-2026-06-01 16:39:24,http://207.56.13.146:81/cdnlive/cctv1.m3u8
+2026-06-02 15:28:37,http://207.56.13.146:81/cdnlive/cctv1.m3u8
 
 📺央视频道,#genre#
 CCTV-1,http://207.56.13.146:81/cdnlive/cctv1.m3u8
@@ -73,8 +73,10 @@ CCTV-17,http://43.248.187.60:2026/wntv.php?id=5552
 广东卫视,http://207.56.13.146:81/cdnlive/gdws.m3u8
 广东卫视,http://api.mgsp.eu.cc/608831231
 浙江卫视,http://207.56.13.146:81/cdnlive/zjws.m3u8
+浙江卫视,http://107.150.60.122/live/zjwshd.m3u8
 湖南卫视,http://207.56.13.146:81/cdnlive/hnws.m3u8
 湖南卫视,http://43.248.187.60:2026/wntv.php?id=5216
+湖南卫视,http://107.150.60.122/live/hnwshd.m3u8
 湖南卫视,http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hunws
 北京卫视,http://207.56.13.146:81/cdnlive/bjws.m3u8
 北京卫视,http://43.248.187.60:2026/wntv.php?id=5223
@@ -85,6 +87,7 @@ CCTV-17,http://43.248.187.60:2026/wntv.php?id=5552
 重庆卫视,http://207.56.13.146:81/cdnlive/cqws.m3u8
 东方卫视,http://207.56.13.146:81/cdnlive/dfws.m3u8
 东方卫视,http://api.mgsp.eu.cc/651632648
+东方卫视,http://107.150.60.122/live/dfwshd.m3u8
 东南卫视,http://207.56.13.146:81/cdnlive/dnws.m3u8
 东南卫视,http://api.mgsp.eu.cc/849116810
 甘肃卫视,http://207.56.13.146:81/cdnlive/gsws.m3u8
@@ -145,15 +148,15 @@ CCTV-17,http://43.248.187.60:2026/wntv.php?id=5552
 湖南爱晚,http://111.8.242.102:9999/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南教育,http://111.8.242.102:9999/tsfile/live/1015_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南教育,http://107.150.60.122/live/hnjy.m3u8
-湖南娱乐,http://111.8.242.102:9999/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南娱乐,http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hunyl
+湖南娱乐,http://111.8.242.102:9999/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南娱乐,http://107.150.60.122/live/hnyl.m3u8
 益阳公共,http://111.8.242.102:9999/tsfile/live/1132_1.m3u8?key=txiptv&playlive=1&authid=0
 
 🌊港·澳·台,#genre#
-翡翠台,http://o11.163189.xyz/stream/tvb/fct/
 翡翠台,http://dbm.cc.cd:20002/smt3.2.1.php?id=jade_xue
 翡翠台,http://dbm.cc.cd:20002/smt3.2.1.php?id=jade_twn
+翡翠台,http://o11.163189.xyz/stream/tvb/fct/
 翡翠台,http://dreamtv.de5.net:8880/stream/57aa00a8-dcf3-4044-957e-9b1f00e8ebd0/playlist.m3u8
 明珠台,http://dbm.cc.cd:20002/smt3.2.1.php?id=pearl_twn
 明珠台,http://o11.163189.xyz/stream/tvb/mzt/
@@ -183,8 +186,8 @@ CHC影迷电影,http://api.mgsp.eu.cc/952383261
 蜡笔小新,https://live.ottiptv.cc/huya/11352970
 
 🏛经典剧场,#genre#
-爱情公寓,http://74.91.26.218:82/live/vlaqgy.m3u8
 爱情公寓,https://live.ottiptv.cc/huya/11336726
+爱情公寓,http://74.91.26.218:82/live/vlaqgy.m3u8
 陈翔六点半,https://isus.cc/php/huya.php?id=11274154
 三国演义,https://live.ottiptv.cc/huya/11352944
 水浒传,https://live.ottiptv.cc/huya/26355860
