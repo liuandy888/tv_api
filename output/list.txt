@@ -1,5 +1,5 @@
 🕘️更新时间,#genre#
-2026-06-05 15:13:57,http://207.56.13.146:81/cdnlive/cctv1.m3u8
+2026-06-06 14:35:20,http://207.56.13.146:81/cdnlive/cctv1.m3u8
 
 📺央视频道,#genre#
 CCTV-1,http://207.56.13.146:81/cdnlive/cctv1.m3u8
@@ -141,23 +141,23 @@ CCTV-17,http://43.248.187.60:2026/wntv.php?id=5552
 ☘️湖南频道,#genre#
 湖南都市,http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hunds
 湖南都市,http://111.8.242.102:9999/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&authid=0
-湖南经视,http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hunjs
 湖南经视,http://111.8.242.102:9999/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0
+湖南经视,http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hunjs
 湖南电视剧,http://111.8.242.102:9999/tsfile/live/1013_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南电影,http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hndy
 湖南爱晚,http://111.8.242.102:9999/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南教育,http://111.8.242.102:9999/tsfile/live/1015_1.m3u8?key=txiptv&playlive=1&authid=0
 湖南教育,http://107.150.60.122/live/hnjy.m3u8
-湖南娱乐,http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hunyl
 湖南娱乐,http://111.8.242.102:9999/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&authid=0
+湖南娱乐,http://110.42.52.180:6688/live/live.php?token=8DJZeof6z8&id=hunyl
 湖南娱乐,http://107.150.60.122/live/hnyl.m3u8
 益阳公共,http://111.8.242.102:9999/tsfile/live/1132_1.m3u8?key=txiptv&playlive=1&authid=0
 益阳公共,http://hunhhyd.sohu.blog:9999/tsfile/live/1132_1.m3u8?key=txiptv&playlive=1&authid=0
 娄底公共,http://hunhhyd.sohu.blog:9999/tsfile/live/1086_1.m3u8?key=txiptv&playlive=1&authid=0
 
 🌊港·澳·台,#genre#
-翡翠台,http://dbm.cc.cd:20002/smt3.2.1.php?id=jade_xue
 翡翠台,http://dbm.cc.cd:20002/smt3.2.1.php?id=jade_twn
+翡翠台,http://dbm.cc.cd:20002/smt3.2.1.php?id=jade_xue
 翡翠台,http://o11.163189.xyz/stream/tvb/fct/
 翡翠台,http://dreamtv.de5.net:8880/stream/57aa00a8-dcf3-4044-957e-9b1f00e8ebd0/playlist.m3u8
 明珠台,http://o11.163189.xyz/stream/tvb/mzt/
