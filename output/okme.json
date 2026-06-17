@@ -796,11 +796,12 @@
   ],
     "lives": [
          {
-            "name": "MIGU",
-            "type": 0,
-            "url": "https://ds65.tv1288.xyz",
-            "playerType": 2,
-            "timeout": 10
+            "name": "裤佬",
+            "type": "0",
+            "timeout": 10,
+            "url": "https://gh-proxy.org/https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/refs/heads/Jsnzkpg/Jsnzkpg1",
+            "epg": "https://epg.112114.xyz/?ch={name}&date={date}",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
         },
         {
             "name": "iptv",
