@@ -852,7 +852,6 @@
             "name": "iptv",
             "type": 0,
             "url": "https://taoiptv.com/lives/44015.txt?token=f4e438892830f499",
-            "playerType": 2,
             "timeout": 10
         },
         {
