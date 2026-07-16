@@ -10,4 +10,11 @@ CCTV7,http://8.138.7.223/tv/cctv7.m3u8
 CCTV8,http://8.138.7.223/tv/cctv8.m3u8
 CCTV13,http://8.138.7.223/tv/cctv13.php
 重温经典,http://8.138.7.223/tv/cwjd.php
+广州综合,http://8.138.7.223/tv/gzzh.m3u8
+广州新闻,http://8.138.7.223/tv/gzxw.m3u8
+广东珠江,http://8.138.7.223/tv/gdzj.m3u8
+大湾区卫视,http://8.138.7.223/tv/dwq.m3u8
+chc影迷电影http://198.204.228.26/live/chchd.m3u8
+chc动作电影http://198.204.228.26/live/chcdz.m3u8
+chc家庭影院http://198.204.228.26/live/chcjt.m3u8
 
