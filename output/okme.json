@@ -858,7 +858,6 @@
             "name": "see",
             "type": 0,
             "url": "./list.txt",
-            "playerType": 2,
             "epg": "http://epg.52sw.top:668/?ch={name}&date={date},https://tv.mxdyeah.top/epgphp/t.xml.gz",
             "logo": "https://gitee.com/mytv-android/myTVlogo/raw/main/img/{name}.png",
             "ua":"dream",
