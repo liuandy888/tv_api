@@ -851,7 +851,7 @@
         {
             "name": "iptv",
             "type": 0,
-            "url": "https://gh-proxy.org/https://raw.githubusercontent.com/jn950/live/main/tv/holive.m3u",
+            "url": "https://taoiptv.com/lives/44015.txt?token=b74877dc662f4c0c",
             "timeout": 10
         },
         {
