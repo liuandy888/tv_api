@@ -844,7 +844,7 @@
             "name": "裤佬",
             "type": "0",
             "timeout": 10,
-            "url": "https://live.445569.xyz/live.m3u",
+            "url": "https://iptv.445569.xyz/live.m3u",
             "epg": "https://epg.112114.xyz/?ch={name}&date={date}",
             "logo": "https://epg.112114.xyz/logo/{name}.png"
         },
@@ -860,7 +860,7 @@
             "url": "./list.txt",
             "epg": "http://epg.52sw.top:668/?ch={name}&date={date},https://tv.mxdyeah.top/epgphp/t.xml.gz",
             "logo": "https://gitee.com/mytv-android/myTVlogo/raw/main/img/{name}.png",
-            "ua":"dream",
+            #"ua":"dream",
             "catchup": {
                 "type": "append",
                 "source": "&playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
