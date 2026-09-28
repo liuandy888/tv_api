@@ -864,8 +864,7 @@
        {"name":"酷狗music",
          "type":"0",
          "timeout": 10,
-         "url":"https://kugou.44569.xyz/live.m3u"
-
+         "url":"https://kugou.445569.xyz/live.m3u"
          },
         {
             "name": "iptv",
