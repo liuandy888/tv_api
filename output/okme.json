@@ -104,10 +104,9 @@
             "key": "裤佬影视",
             "name": "👖裤佬丨pa丨影视",
             "type": 1,
-            "api": "https://api.wsyzy.net/api.php/provide/vod",
+            "api": "https://api.wsyzy.net/api.php/provide/vod/?ac=list",
             "searchable": 1,
             "quickSearch": 1,
-            "filterable": 1,
 "categories": [
         "Netflix电影",
         "Netflix自制剧"
