@@ -51,6 +51,48 @@
             "ext": "./lib/mangmang.png"
         },
 {
+            "key": "荐片123",
+            "name": "🇯荐片┃影视 JS",
+            "type": 3,
+            "api": "https://cdn.jsdmirror.com/gh/ouhaibo1980/tvbox@main/js/荐片.js",
+            "searchable": 0,
+            "quickSearch": 1,
+            "filterable": 1
+        }, {
+            "key": "极影",
+            "name": "🇯极影┃影视 JS",
+            "type": 3,
+            "api": "https://cdn.jsdmirror.com/gh/ouhaibo1980/tvbox@main/js/极影.js",
+            "searchable": 0,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "http://cmsyun2.qijiyun.vip/api.php/app/"
+        }, {
+            "key": "金牌123",
+            "name": "🇯金牌┃影视 JS",
+            "type": 3,
+            "api": "https://cdn.jsdmirror.com/gh/ouhaibo1980/tvbox@main/js/金牌影院.js",
+            "searchable": 0,
+            "quickSearch": 1,
+            "filterable": 1
+        }, {
+            "key": "星辰影院",
+            "name": "🇯星辰┃影视 JS",
+            "type": 3,
+            "api": "https://cdn.jsdmirror.com/gh/ouhaibo1980/tvbox@main/js/星辰影院.js",
+            "searchable": 0,
+            "quickSearch": 1,
+            "filterable": 1
+        }, {
+            "key": "独播库",
+            "name": "🇯播库┃影视 JS",
+            "type": 3,
+            "api": "https://cdn.jsdmirror.com/gh/ouhaibo1980/tvbox@main/js/VmOlRys8_vip.js",
+            "searchable": 0,
+            "quickSearch": 1,
+            "filterable": 1
+        },
+{
       "key": "电影天堂",
       "name": "电影天堂",
       "type": 1,
