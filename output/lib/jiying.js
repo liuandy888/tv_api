@@ -1,4 +1,4 @@
-import { Crypto, _ } from 'assets://js/lib/cat.js';
+import { Crypto, _ } from 'assets://js/lib/cat.js'
 
 let host = '';
 let header = {
@@ -1043,7 +1043,7 @@ function jsonArr2Str(array) {
 function getHeaders(URL) {
     const headers = {};
     headers["User-Agent"] = UA(URL);
-    return headers;
+    return headers;
 }
 
 function isJsonString(str) {
