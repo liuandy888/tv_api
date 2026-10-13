@@ -62,7 +62,7 @@
             "key": "极影",
             "name": "🇯极影┃影视 JS",
             "type": 3,
-            "api": "https://cdn.jsdmirror.com/gh/liuandy888/tv_api/output/lib/jiying.js",
+            "api": "https://cdn.jsdmirror.com/gh/ouhaibo1980/tvbox@main/js/极影.js",
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
