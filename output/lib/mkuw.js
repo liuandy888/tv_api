@@ -89,18 +89,23 @@ function _format_time(seconds) {
 function _create_ssa_subtitle(lrc_text) {
     const lines = [];
     const pattern = /\[(\d{2}):(\d{2})\.(\d{2})\](.*)/;
+    
     for (const line of String(lrc_text || "").split("\n")) {
         const match = line.match(pattern);
         if (!match) continue;
         const minutes = parseInt(match[1], 10);
         const sec = parseInt(match[2], 10);
         const hundredths = parseInt(match[3], 10);
-        const text = match[4].trim();
+        const text = match[4].trim().replace(/,/g, "，"); 
         const totalSeconds = minutes * 60 + sec + hundredths / 100.0;
         if (text) lines.push({ start: totalSeconds, text });
     }
     if (!lines.length) return "";
 
+    // 设定三种不同的 Style，分配不同的颜色和 MarginV（垂直高度）
+    // 1. 上一句（黄色，最高）
+    // 2. 当前句（绿色，居中）
+    // 3. 下一句（黄色，最低）
     const ssa_header = `[Script Info]
 ScriptType: v4.00+
 Collisions: Normal
@@ -111,11 +116,9 @@ WrapStyle: 0
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: WAITING_TOP2,Roboto,55,&H0000FFFF,&H00808080,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,1,2,0,0,180,1
-Style: WAITING_TOP1,Roboto,55,&H0000FFFF,&H00808080,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,1,2,0,0,260,1
-Style: PLAYING_CENTER,Roboto,60,&H0000FF00,&H00808080,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,2,2,2,0,0,340,1
-Style: PLAYED_BOTTOM1,Roboto,55,&H0000FFFF,&H00808080,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,1,2,0,0,420,1
-Style: PLAYED_BOTTOM2,Roboto,55,&H0000FFFF,&H00808080,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,1,2,0,0,500,1
+Style: TopLine,Roboto,45,&H0000FFFF,&H00808080,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,1,2,10,10,180,1
+Style: MidLine,Roboto,55,&H0000FF00,&H00808080,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,1,2,10,10,100,1
+Style: BotLine,Roboto,45,&H0000FFFF,&H00808080,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,1,2,10,10,30,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -133,17 +136,23 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     for (let i = 0; i < lines.length; i++) {
         const current = lines[i];
         const currentEnd = (i + 1 < lines.length) ? lines[i + 1].start : current.start + 5.0;
-        const wait2 = i + 2 < lines.length ? lines[i + 2] : null;
+        
         const wait1 = i + 1 < lines.length ? lines[i + 1] : null;
         const played1 = i - 1 >= 0 ? lines[i - 1] : null;
-        const played2 = i - 2 >= 0 ? lines[i - 2] : null;
+        
         const startStr = formatSsaTime(current.start);
         const endStr = formatSsaTime(currentEnd);
-        if (wait2) events.push(`Dialogue: 1,${startStr},${endStr},WAITING_TOP2,,0,0,0,,${wait2.text}`);
-        if (wait1) events.push(`Dialogue: 2,${startStr},${endStr},WAITING_TOP1,,0,0,0,,${wait1.text}`);
-        events.push(`Dialogue: 3,${startStr},${endStr},PLAYING_CENTER,,0,0,0,,${current.text}`);
-        if (played1) events.push(`Dialogue: 4,${startStr},${endStr},PLAYED_BOTTOM1,,0,0,0,,${played1.text}`);
-        if (played2) events.push(`Dialogue: 5,${startStr},${endStr},PLAYED_BOTTOM2,,0,0,0,,${played2.text}`);
+
+        // 分别发送 3 个独立的事件，利用 Style 强制区分位置和颜色
+        if (played1) {
+            events.push(`Dialogue: 0,${startStr},${endStr},TopLine,,0,0,0,,${played1.text}`);
+        }
+        
+        events.push(`Dialogue: 0,${startStr},${endStr},MidLine,,0,0,0,,${current.text}`);
+        
+        if (wait1) {
+            events.push(`Dialogue: 0,${startStr},${endStr},BotLine,,0,0,0,,${wait1.text}`);
+        }
     }
     return ssa_header + events.join("\n");
 }
@@ -415,7 +424,7 @@ async function play(flag, id, vipFlags) {
             const ssaBase64 = base64Encode(ssaText);
             console.log("base64 长度:", ssaBase64.length);
             result.subs = [{
-                name: "5行歌词",
+                name: "3行歌词",
                 url: `data:text/x-ssa;base64,${ssaBase64}`,
                 format: "text/x-ssa",
                 flag: 0,
