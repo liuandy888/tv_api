@@ -102,23 +102,17 @@ function _create_ssa_subtitle(lrc_text) {
     }
     if (!lines.length) return "";
 
-    // 设定三种不同的 Style，分配不同的颜色和 MarginV（垂直高度）
-    // 1. 上一句（黄色，最高）
-    // 2. 当前句（绿色，居中）
-    // 3. 下一句（黄色，最低）
     const ssa_header = `[Script Info]
 ScriptType: v4.00+
 Collisions: Normal
 PlayResX: 1280
 PlayResY: 720
 Timer: 100.0000
-WrapStyle: 0
+WrapStyle: 2
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: TopLine,Roboto,45,&H0000FFFF,&H00808080,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,1,2,10,10,180,1
-Style: MidLine,Roboto,55,&H0000FF00,&H00808080,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,1,2,10,10,100,1
-Style: BotLine,Roboto,45,&H0000FFFF,&H00808080,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,1,2,10,10,30,1
+Style: Default,Roboto,50,&H00FFFFFF,&H00808080,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,1,2,10,10,60,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -143,20 +137,22 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         const startStr = formatSsaTime(current.start);
         const endStr = formatSsaTime(currentEnd);
 
-        // 分别发送 3 个独立的事件，利用 Style 强制区分位置和颜色
-        if (played1) {
-            events.push(`Dialogue: 0,${startStr},${endStr},TopLine,,0,0,0,,${played1.text}`);
-        }
+        const textPlayed = played1 ? played1.text : "　";
+        const textWait = wait1 ? wait1.text : "　";
+
+        // 【关键】每一行开头都重置颜色代码 \c&H...&，确保 Exo 能正确着色
+        // 黄色: \c&H00FFFF&，绿色: \c&H00FF00&
+        const line1 = `{\\c&H00FFFF&}${textPlayed}`;
+        const line2 = `{\\c&H00FF00&}${current.text}`;
+        const line3 = `{\\c&H00FFFF&}${textWait}`;
+
+        // 使用 \N 强制换行
+        const fullText = `${line1}\\N${line2}\\N${line3}`;
         
-        events.push(`Dialogue: 0,${startStr},${endStr},MidLine,,0,0,0,,${current.text}`);
-        
-        if (wait1) {
-            events.push(`Dialogue: 0,${startStr},${endStr},BotLine,,0,0,0,,${wait1.text}`);
-        }
+        events.push(`Dialogue: 0,${startStr},${endStr},Default,,0,0,0,,${fullText}`);
     }
     return ssa_header + events.join("\n");
 }
-
 // 获取歌手全部歌曲（最多 10 页 / 300 首）
 async function _get_artist_songs(rid) {
     const headersSongs = {
