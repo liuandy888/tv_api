@@ -102,6 +102,7 @@ function _create_ssa_subtitle(lrc_text) {
     }
     if (!lines.length) return "";
 
+    // 全局颜色直接设为绿色 (&H0000FF00&)，字体稍微放大
     const ssa_header = `[Script Info]
 ScriptType: v4.00+
 Collisions: Normal
@@ -112,7 +113,7 @@ WrapStyle: 2
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Default,Roboto,50,&H00FFFFFF,&H00808080,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1,1,2,10,10,60,1
+Style: Default,Roboto,55,&H0000FF00,&H00808080,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,2,2,2,10,10,80,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -131,23 +132,11 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         const current = lines[i];
         const currentEnd = (i + 1 < lines.length) ? lines[i + 1].start : current.start + 5.0;
         
-        const wait1 = i + 1 < lines.length ? lines[i + 1] : null;
-        const played1 = i - 1 >= 0 ? lines[i - 1] : null;
-        
         const startStr = formatSsaTime(current.start);
         const endStr = formatSsaTime(currentEnd);
 
-        const textPlayed = played1 ? played1.text : "　";
-        const textWait = wait1 ? wait1.text : "　";
-
-        // 【关键】每一行开头都重置颜色代码 \c&H...&，确保 Exo 能正确着色
-        // 黄色: \c&H00FFFF&，绿色: \c&H00FF00&
-        const line1 = `{\\c&H00FFFF&}${textPlayed}`;
-        const line2 = `{\\c&H00FF00&}${current.text}`;
-        const line3 = `{\\c&H00FFFF&}${textWait}`;
-
-        // 使用 \N 强制换行
-        const fullText = `${line1}\\N${line2}\\N${line3}`;
+        // 既然是一行，我们试着再给当前句包一层内联代码（就算引擎不认，全局 Style 也是绿色的）
+        const fullText = `{\\c&H00FF00&}${current.text}`;
         
         events.push(`Dialogue: 0,${startStr},${endStr},Default,,0,0,0,,${fullText}`);
     }

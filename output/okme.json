@@ -215,7 +215,7 @@
             "key": "MTV1",
             "name": "🎙️易听音乐┃带歌词",
             "type": 3,
-            "api":"./lib/mkuw.js",
+            "api":"https://cdn.jsdmirror.com/gh/liuandy888/tv_api/output/lib/mkuww.js",
             "playerType": 2,
             "searchable": 1,
             "quickSearch": 1,
