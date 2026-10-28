@@ -155,7 +155,7 @@
             "key": "星辰影院",
             "name": "🇯星辰┃影视 JS",
             "type": 3,
-            "api": "https://cdn.jsdmirror.com/gh/liuandy888/tv_api/output/lib/xingchen.js",
+            "api": "./lib/xingchen.js",
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1
