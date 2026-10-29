@@ -140,10 +140,11 @@
             "changeable": 0
         },
 {
-            "key": "星辰影院",
+            "key": "360影院",
             "name": "360┃影视 JS",
             "type": 3,
-            "api": "./lib/360ys.js",
+            "api": "./lib/drpy2.min.js",
+            "ext": "./lib/360ys.js"
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1
