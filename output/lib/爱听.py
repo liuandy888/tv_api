@@ -19,7 +19,7 @@ class Spider(Spider):
         self.headers = {"User-Agent": "Mozilla/5.0 (Linux; Android 15; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",
                                  "Origin": "https://www.22a5.com", 
                                   "Referer": "https://www.22a5.com",
-"cookie":"PHPSESSID=aehg1lm2m3l8leis82ga9i5bmq;"
+"cookie":"PHPSESSID=kjphpbht35p240bk8a4f67utrb;"
 
 }
         self.session.headers.update(self.headers)
