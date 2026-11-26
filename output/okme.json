@@ -33,7 +33,7 @@
       "key": "量子资源",
       "name": "🍊量子┃资源",
       "type": 1,
-      "api": "https://cj.lziapi.com/api.php/provide/vod/",
+      "api": "https://lzzyapi.com/api.php/provide/vod/",
       "searchable": 1,
       "changeable": 1,
       "categories": [
@@ -73,7 +73,7 @@
       "key": "非凡影视",
       "name": "🍊非凡┃影视",
       "type": 1,
-      "api": "http://cj.ffzyapi.com/api.php/provide/vod",
+      "api": "https://api.ffzycaiji.com/api.php/provide/vod/",
       "searchable": 1,
       "changeable": 1,
       "categories": [
@@ -107,21 +107,21 @@
     },
  {
             "key": "琦琦",
-            "name": "❤️奇异",
+            "name": "🥝奇异┃影视",
              "type": 3,
             "api": "./lib/drpy2.min.js",
             "ext": "./lib/aiqiyi.js"
         },
 {
             "key": "藤藤",
-            "name": "腾讯别天神",
+            "name": "😄😄┃影视",
              "type": 3,
             "api": "./lib/drpy2.min.js",
             "ext": "./lib/tengxun2.js"
         },
  {
             "key": "茫果",
-            "name": "茫茫",
+            "name": "🥭茫茫┃影视",
              "type": 3,
             "api": "./lib/drpy2.min.js",
             "ext": "./lib/mangmang.png"
@@ -211,7 +211,7 @@
         },
 {
       "key": "电影天堂",
-      "name": "电影天堂",
+      "name": "🎬电影┃影视",
       "type": 1,
       "api": "https://api.dyttcj.com/api.php/provide/vod/?ac=list",
       "searchable": 1,
