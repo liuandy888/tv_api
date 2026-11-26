@@ -71,7 +71,7 @@
     },
     {
       "key": "非凡影视",
-      "name": "🍊非凡┃影视",
+      "name": "🍊非凡┃资源",
       "type": 1,
       "api": "https://api.ffzycaiji.com/api.php/provide/vod/",
       "searchable": 1,
@@ -114,7 +114,7 @@
         },
 {
             "key": "藤藤",
-            "name": "😄😄┃影视",
+            "name": "🐧藤藤┃影视",
              "type": 3,
             "api": "./lib/drpy2.min.js",
             "ext": "./lib/tengxun2.js"
