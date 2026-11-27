@@ -13,7 +13,7 @@ title: '星辰影院', author: '小可乐/v6.1.1'
 const MOBILE_UA = 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36';
 const DefHeader = {
     'User-Agent': MOBILE_UA,
-    'Referer': 'https%3A%2F%2Fwww.ixcyy1.com%2F'
+    'Referer': 'https://www.xcyycn.cc'
 };
 var HOST;
 var KParams = {
@@ -23,7 +23,7 @@ var KParams = {
 
 async function init(cfg) {
     try {
-        HOST = (cfg.ext?.host?.trim() || 'https%3A%2F%2Fwww.ixcyy1.com%2F').replace(/\/$/, '');
+        HOST = (cfg.ext?.host?.trim() || 'https://www.ixcyy1.com').replace(/\/$/, '');
         KParams.headers['Referer'] = HOST;
         let parseTimeout = parseInt(cfg.ext?.timeout?.trim(), 10);
         if (parseTimeout > 0) { KParams.timeout = parseTimeout; }
