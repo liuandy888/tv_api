@@ -13,7 +13,7 @@ title: '星辰影院', author: '小可乐/v6.1.1'
 const MOBILE_UA = 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36';
 const DefHeader = {
     'User-Agent': MOBILE_UA,
-    'Referer': 'https://www.xcyycn.cc/'
+    'Referer': 'https%3A%2F%2Fwww.ixcyy1.com%2F'
 };
 var HOST;
 var KParams = {
