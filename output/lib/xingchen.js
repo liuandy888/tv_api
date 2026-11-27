@@ -23,7 +23,7 @@ var KParams = {
 
 async function init(cfg) {
     try {
-        HOST = (cfg.ext?.host?.trim() || 'https://www.xcyycn.cc').replace(/\/$/, '');
+        HOST = (cfg.ext?.host?.trim() || 'https%3A%2F%2Fwww.ixcyy1.com%2F').replace(/\/$/, '');
         KParams.headers['Referer'] = HOST;
         let parseTimeout = parseInt(cfg.ext?.timeout?.trim(), 10);
         if (parseTimeout > 0) { KParams.timeout = parseTimeout; }
